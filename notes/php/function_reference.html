@@ -1,0 +1,621 @@
+<html>
+    <meta Http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <head>
+    </head>
+    <body>
+
+	<div id="funcref" class="set"><h1 class="title">Function Reference</h1>
+	    <ul>
+
+		<li> Extensions to other language
+		<ul>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.lua.html">Lua</a></strong> — <small>"Lua is a powerful, fast, light-weight, embeddable scripting language." This extension embeds the lua interpreter and offers an OO-API to lua variables and functions. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>E&nbsp;<a href="php-chunked-xhtml/book.java.html">Java</a>;</strong> — <small>PHP / Java Integration. There are two possible ways to bridge PHP and Java: you can either integrate PHP into a Java Servlet environment, which is the more stable and efficient solution, or integrate Java support into PHP. The former is provided by a SAPI module that interfaces with the Servlet server, the latter by this Java extension. The Java extension provides a simple and effective means for creating and invoking methods on Java objects from PHP. The JVM is created using JNI, and everything runs in-process. </small></li>
+		    <br>
+		</ul>
+		</li>
+
+
+		<li> Compiler & runtime cache
+		<ul>
+		    <li><strong><font style="background-color:green;color:white">P</font>E&nbsp;<a href="php-chunked-xhtml/book.bcompiler.html">bcompiler</a></strong> — <small>PHP bytecode Compiler</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.apc.html">APC</a></strong> — <small>The Alternative PHP Cache (APC) is a free and open opcode cache for PHP. Its goal is to provide a free, open, and robust framework for caching and optimizing PHP intermediate code. </small></li>
+		    <br>
+		</ul>
+		</li>
+
+		<li> Interact with PHP engine
+		<ul>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.info.html">PHP Options/Info</a></strong> — <small>PHP Options and Information. This functions enable you to get a lot of information about PHP itself, e.g. runtime configuration, loaded extensions, version and much more. You'll also find functions to set options for your running PHP. The probably best known function of PHP - phpinfo() - can be found here. </small></li>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.tokenizer.html">Tokenizer</a></strong> — <small>The tokenizer functions provide an interface to the PHP tokenizer embedded in the Zend Engine. Using these functions you may write your own PHP source analyzing or modification tools without having to deal with the language specification at the lexical level. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.inclued.html">inclued</a></strong> — <small>Inclusion hierarchy viewer. Traces through and dumps the hierarchy of file inclusions and class inheritance at runtime. The files may have been included using include, include_once, require, or require_once. Class inheritance dependencies are also reported. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.xhprof.html">Xhprof</a></strong> — <small>Hierarchical Profiler
+			<ul>
+			    <li>XHProf is a light-weight hierarchical and instrumentation based profiler. During the data collection phase, it keeps track of call counts and inclusive metrics for arcs in the dynamic callgraph of a program. It computes exclusive metrics in the reporting/post processing phase, such as wall (elapsed) time, CPU time and memory usage. A functions profile can be broken down by callers or callees. XHProf handles recursive functions by detecting cycles in the callgraph at data collection time itself and avoiding the cycles by giving unique depth qualified names for the recursive invocations.</li>
+			    <li>XHProf includes a simple HTML based user interface (written in PHP). The browser based UI for viewing profiler results makes it easy to view results or to share results with peers. A callgraph image view is also supported.</li>
+			    <li>XHProf reports can often be helpful in understanding the structure of the code being executed. The hierarchical nature of the reports can be used to determine, for example, what chain of calls led to a particular function getting called.</li>
+			    <li>XHProf supports ability to compare two runs (a.k.a. "diff" reports) or aggregate data from multiple runs. Diff and aggregate reports, much like single run reports, offer "flat" as well as "hierarchical" views of the profile.</li>
+			</ul>
+		    </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.parsekit.html">Parsekit</a></strong> — <small>These functions allow runtime analysis of opcodes compiled from PHP scripts. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.runkit.html">runkit</a></strong> — <small>The runkit extension provides means to modify constants, user-defined functions, and user-defined classes. It also provides for custom superglobal variables and embeddable sub-interpreters via sandboxing. This package is meant as a feature added replacement for the classkit package. When compiled with the --enable-runkit=classkit option to ./configure, it will export classkit compatible function definitions and constants. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.memtrack.html">Memtrack</a></strong> — <small>The purpose of this extension is to detect the most memory hungry scripts and functions. memtrack tracks memory consumption in PHP scripts and produces reports (warnings) when the consumption reaches certain levels set by the user. This is achieved by replacing default executor function by a special function which compares memory usage before and after running the original executor - this way we can tell how much the memory usage has changed during the execution of the current part of the code. Zend Engine runs its executor for each opcode array (op_array), which usually means function, plain script and such, so memtrack doesn't have any noticeable effect on performance. memtrack doesn't provide any functions, there are only INI directives which allow you to configure the way it should work. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>D&nbsp;<a href="php-chunked-xhtml/book.classkit.html">Classkit</a></strong> — <font style="background-color:white;color:grey"><small>These functions allow the dynamic manipulation of PHP classes, at runtime. This extension has been replaced by runkit, which is not limited to class manipulation but has function manipulation, as well. </small></font></li>
+		    <br>
+		</ul>
+		</li>
+
+		<li>Affecting PHP's Behaviour ---- Error & Debug
+		<ul>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.errorfunc.html">Error Handling</a></strong> — <small>These are functions dealing with error handling and logging. They allow you to define your own error handling rules, as well as modify the way the errors can be logged. This allows you to change and enhance error reporting to suit your needs. With the logging functions, you can send messages directly to other machines, to an email (or email to pager gateway!), to system logs, etc., so you can selectively log and monitor the most important parts of your applications and websites. The error reporting functions allow you to customize what level and kind of error feedback is given, ranging from simple notices to customized functions returned during errors. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.apd.html">APD</a></strong> — <small>APD is the Advanced PHP Debugger. It was written to provide profiling and debugging capabilities for PHP code, as well as to provide the ability to print out a full stack backtrace. APD supports interactive debugging, but by default it writes data to trace files. It also offers event based logging so that varying levels of information (including function calls, arguments passed, timings, etc.) can be turned on or off for individual scripts. APD is a Zend Extension, modifying the way the internals of PHP handle function calls, and thus may or may not be compatible with other Zend Extensions (for example Zend Optimizer). </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.scream.html">scream</a></strong> — <small>Break the silence operator. The scream extension gives the possibility to disable the silencing error control operator so all errors are being reported. This feature is controlled by an ini setting.</small></li>
+		    <br>
+		</ul>
+		</li>
+		<br>
+
+		<li>Process Control Extensions
+		<ul>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.exec.html">Program execution</a></strong> — <small>System program execution. Those functions provide means to execute commands on the system itself, and means to secure such commands. All execution functions call the commands through cmd.exe under Windows. Therefore the user calling these functions needs appropriate privilege to run this command. The only exception is proc_open() with bypass_shell option.</small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.pcntl.html">PCNTL</a></strong> — <small>Process Control. Process Control support in PHP implements the Unix style of process creation, program execution, signal handling and process termination. Process Control should not be enabled within a web server environment and unexpected results may happen if any Process Control functions are used within a web server environment. //This documentation is intended to explain the general usage of each of the Process Control functions. For detailed information about Unix process control you are encouraged to consult your systems documentation including fork(2), waitpid(2) and signal(2) or a comprehensive reference such as Advanced Programming in the UNIX Environment by W. Richard Stevens (Addison-Wesley). //PCNTL now uses ticks as the signal handle callback mechanism, which is much faster than the previous mechanism. This change follows the same semantics as using "user ticks". You use the declare() statement to specify the locations in your program where callbacks are allowed to occur. This allows you to minimize the overhead of handling asynchronous events. In the past, compiling PHP with pcntl enabled would always incur this overhead, whether or not your script actually used pcntl. //There is one adjustment that all pcntl scripts prior to PHP 4.3.0 must make for them to work which is to either to use declare() on a section where you wish to allow callbacks or to just enable it across the entire script using the new global syntax of declare(). </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.posix.html">POSIX</a></strong> — <small>This module contains an interface to those functions defined in the IEEE 1003.1 (POSIX.1) standards document which are not accessible through other means. Sensitive data can be retrieved with the POSIX functions, e.g. posix_getpwnam() and friends. None of the POSIX function perform any kind of access checking when safe mode is enabled. It's therefore strongly advised to disable the POSIX extension at all (use --disable-posix in your configure line) if you're operating in such an environment.</small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.sem.html">Semaphore</a></strong> — <small>Semaphore, Shared Memory and IPC. This module provides wrappers for the System V IPC family of functions. It includes semaphores, shared memory and inter-process messaging (IPC). //Semaphores may be used to provide exclusive access to resources on the current machine, or to limit the number of processes that may simultaneously use a resource. //This module provides also shared memory functions using System V shared memory. Shared memory may be used to provide access to global variables. Different httpd-daemons and even other programs (such as Perl, C, ...) are able to access this data to provide a global data-exchange. Remember, that shared memory is NOT safe against simultaneous access. Use semaphores for synchronization. //#Limits of Shared Memory by the Unix OS: #SHMMAX max size of shared memory, normally 131072 bytes; #SHMMIN 	minimum size of shared memory, normally 1 byte; #SHMMNI 	max amount of shared memory segments on a system, normally 100; #SHMSEG	max amount of shared memory segments per process, normally 6. The messaging functions may be used to send and receive messages to/from other processes. They provide a simple and effective means of exchanging data between processes, without the need for setting up an alternative using Unix domain sockets. </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.shmop.html">Shared Memory</a></strong> — <small>Shmop is an easy to use set of functions that allows PHP to read, write, create and delete Unix shared memory segments. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.eio.html">Eio</a></strong> — <small>This extension provides asyncronous POSIX I/O by means of libeio C library.</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.expect.html">Expect</a></strong> — <small>This extension allows to interact with processes through PTY. You may consider using the expect:// wrapper with the filesystem functions which provide a simpler and more intuitive interface. </small></li> 
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.libevent.html">Libevent</a></strong> — <small>Libevent is a library that provides a mechanism to execute a callback function when a specific event occurs on a file descriptor or after a timeout has been reached. </small></li>
+		    <br>
+		</ul>
+		</li>
+
+		---------------------------------------
+
+		<li>Variable and Type Related Extensions
+		<ul>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.filter.html">Filter</a></strong> — <small>Data Filtering. This extension filters data by either validating or sanitizing it. This is especially useful when the data source contains unknown (or foreign) data, like user supplied input. For example, this data may come from an HTML form. There are two main types of filtering: validation and sanitization. Validation is used to validate or check if the data meets certain qualifications. For example, passing in FILTER_VALIDATE_EMAIL will determine if the data is a valid email address, but will not change the data itself. Sanitization will sanitize the data, so it may alter it by removing undesired characters. For example, passing in FILTER_SANITIZE_EMAIL will remove characters that are inappropriate for an email address to contain. That said, it does not validate the data. Flags are optionally used with both validation and sanitization to tweak behaviour according to need. For example, passing in FILTER_FLAG_PATH_REQUIRED while filtering an URL will require a path (like /foo in http://example.org/foo) to be present. </small></li>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.array.html">Arrays</a></strong> — <small>These functions allow you to interact with and manipulate arrays in various ways. Arrays are essential for storing, managing, and operating on sets of variables. Simple and multi-dimensional arrays are supported, and may be either user created or created by another function. There are specific database handling functions for populating arrays from database queries, and several functions return arrays. Please see the Arrays section of the manual for a detailed explanation of how arrays are implemented and used in PHP. See also Array operators for other ways how to manipulate the arrays. </small></li>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.var.html">Variable handling</a></strong> — <small>For information on how variables behave, see the Variables entry in the Language Reference section of the manual. </small></li>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.funchand.html">Function Handling</a></strong> — <small>These functions all handle various operations involved in working with functions.</small></li>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.classobj.html">Classes/Objects</a></strong> — <small>Class/Object Information. These functions allow you to obtain information about classes and instance objects. You can obtain the name of the class to which an object belongs, as well as its member properties and methods. Using these functions, you can find out not only the class membership of an object, but also its parentage (i.e. what class is the object class extending). </small></li>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.reflection.html">Reflection</a></strong> — <small>PHP 5 comes with a complete reflection API that adds the ability to reverse-engineer classes, interfaces, functions, methods and extensions. Additionally, the reflection API offers ways to retrieve doc comments for functions, classes and methods. Please note that certain parts of the internal API are missing the necessary code to work with the Reflection extension. E.g., an internal PHP class might be missing reflection data for properties. These few cases are considered bugs, however, so they should be discovered and fixed. </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.ctype.html">Ctype</a></strong> — <small>Character type checking. The functions provided by this extension check whether a character or string falls into a certain character class according to the current locale (see also setlocale()). // When called with an integer argument these functions behave exactly like their C counterparts from ctype.h. It means that if you pass an integer smaller than 256 it will use the ASCII value of it to see if it fits in the specified range (digits are in 0x30-0x39). If the number is between -128 and -1 inclusive then 256 will be added and the check will be done on that. //When called with a string argument they will check every character in the string and will only return TRUE if every character in the string matches the requested criteria. When called with an empty string the result will always be TRUE in PHP little than 5.1 and FALSE since 5.1. //Passing anything else but a string or integer will return FALSE immediately. //It should be noted that ctype functions are always preferred over regular expressions, and even to some equivalent "str_*" and "is_*" functions. This is because of the fact that ctype uses a native C library and thus processes significantly faster. </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>E&nbsp;<a href="php-chunked-xhtml/book.objaggregation.html">Object Aggregation</a></strong> — <small>Object Aggregation/Composition [PHP 4]. In Object Oriented Programming, it is common to see the composition of simple classes (and/or instances) into a more complex one. This is a flexible strategy for building complicated objects and object hierarchies and can function as a dynamic alternative to multiple inheritance. There are two ways to perform class (and/or object) composition depending on the relationship between the composed elements: Association and Aggregation. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.judy.html">Judy</a></strong> — <small>Judy Arrays. PHP Judy is a PECL extension for the Judy C library implementing dynamic sparse arrays. //A Judy array is a complex but very fast associative array data structure for storing and looking up values using integer or string keys. Unlike normal arrays, Judy arrays may be sparse; that is, they may have large ranges of unassigned indices. //A Judy array consumes memory only when populated yet can grow to take advantage of all available memory. Judy's key benefits are: scalability, performance, memory efficiency, and ease of use. Judy arrays are designed to grow without tuning into the peta-element range, scaling near O(log-base-256) -- 1 more RAM access at 256 X population. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>D&nbsp;<a href="php-chunked-xhtml/book.overload.html">Object overloading</a></strong> — <small>Object property and method call overloading. The purpose of this extension is to allow overloading of object property access and method calls. Only one function is defined in this extension, overload() which takes the name of the class that should have this functionality enabled. The class named has to define appropriate methods if it wants to have this functionality: __get(), __set() and __call() respectively for getting/setting a property, or calling a method. This way overloading can be selective. Inside these handler functions the overloading is disabled so you can access object properties normally. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.weakref.html">Weakref</a></strong> — <small>Weak references provide a non-intrusive gateway to ephemeral objects. Unlike normal (strong) references, weak references do not prevent the garbage collector from freeing that object. For this reason, an object may be destroyed even though a weak reference to that object still exists. In such conditions, the weak reference seamlessly becomes invalid. </small></li>
+		    <br>
+		</ul>
+		</li>
+
+		<li>PHP Basic Extensions
+		<ul>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.stream.html">Streams</a></strong> — <small>
+<ul>
+<li>Streams were introduced with PHP 4.3.0 as a way of generalizing file, network, data compression, and other operations which share a common set of functions and uses. In its simplest definition, a stream is a resource object which exhibits streamable behavior. That is, it can be read from or written to in a linear fashion, and may be able to fseek() to an arbitrary locations within the stream.</li>
+<li>A wrapper is additional code which tells the stream how to handle specific protocols/encodings. For example, the http wrapper knows how to translate a URL into an HTTP/1.0 request for a file on a remote server. There are many wrappers built into PHP by default (See Supported Protocols and Wrappers), and additional, custom wrappers may be added either within a PHP script using stream_wrapper_register(), or directly from an extension using the API Reference in Working with streams. Because any variety of wrapper may be added to PHP, there is no set limit on what can be done with them. To access the list of currently registered wrappers, use stream_get_wrappers().</li>
+<li>A stream is referenced as: scheme://target</li>
+<ul>
+    <li>scheme(string) - The name of the wrapper to be used. Examples include: file, http, https, ftp, ftps, compress.zlib, compress.bz2, and php. See Supported Protocols and Wrappers for a list of PHP built-in wrappers. If no wrapper is specified, the function default is used (typically file://).</li>
+    <li>target - Depends on the wrapper used. For filesystem related streams this is typically a path and filename of the desired file. For network related streams this is typically a hostname, often with a path appended. Again, see Supported Protocols and Wrappers for a description of targets for built-in streams.</li>
+</ul>
+	<li>Information on using streams within the PHP source code can be found in the <a href="php-chunked-xhtml/internals2.ze1.streams.html">Streams API for PHP Extension Authors reference.</a> </li>
+</ul>
+		    </small></li>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.spl.html">SPL</a></strong> — <small>Standard PHP Library. SPL is a collection of interfaces and classes that are meant to solve standard problems. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.spl-types.html">SPL Types</a></strong> — <small>SPL Type Handling. This extension aims at helping people making PHP a stronger typed language and can be a good alternative to scalar type hinting. It provides different typehandling classes as such as integer, float, bool, enum and string </small></li>
+		    <br>
+		</ul>
+		</li>
+
+		<br>
+
+
+		=======================================
+
+
+		<li>File System Related Extensions
+		<ul>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.filesystem.html">Filesystem</a></strong> — <small>No external libraries are needed to build this extension, but if you want PHP to support LFS (large files) on Linux, then you need to have a recent glibc and you need compile PHP with the following compiler flags: -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64. </small></li>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.dir.html">Directories</a></strong> — <small></small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>D&nbsp;<a href="php-chunked-xhtml/book.mime-magic.html">Mimetype</a></strong> — <small>This extension has been deprecated as the PECL extension Fileinfo provides the same functionality (and more) in a much cleaner way. The functions in this module try to guess the content type and encoding of a file by looking for certain magic byte sequences at specific positions within the file. While this is not a bullet proof approach the heuristics used do a very good job. This extension is derived from Apache mod_mime_magic, which is itself based on the file command maintained by Ian F. Darwin. See the source code for further historic and copyright information. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.fileinfo.html">Fileinfo</a></strong> — <small>File Information. The functions in this module try to guess the content type and encoding of a file by looking for certain magic byte sequences at specific positions within the file. While this is not a bullet proof approach the heuristics used do a very good job. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.xattr.html">xattr</a></strong> — <small>The xattr extension allows for the manipulation of extended attributes on a filesystem. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.xdiff.html">xdiff</a></strong> — <small>xdiff extension enables you to create and apply patch files containing differences between different revisions of files. this extension supports two modes of operation - on strings and on files, as well as two different patch formats - unified and binary. unified patches are excellent for text files as they are human-readable and easy to review. for binary files like archives or images, binary patches will be adequate choice as they are binary safe and handle non-printable characters well. starting from version 1.5.0 there are two different sets of functions for generating binary patches. new functions - xdiff_string_rabdiff() and xdiff_file_rabdiff() generate output compatible with older functions but are typically faster and generate smaller results. for more details about methods of generating binary patches and differences between them, please check libxdiff website. this extension uses libxdiff to implement these functions. please see http://www.xmailserver.org/xdiff-lib.html for more information. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.dio.html">Direct IO</a></strong> — <small>PHP supports the direct io functions as described in the Posix Standard (Section 6) for performing I/O functions at a lower level than the C-Language stream I/O functions (fopen(), fread(),..). The use of the DIO functions should be considered only when direct control of a device is needed. In all other cases, the standard filesystem functions are more than adequate. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.inotify.html">Inotify</a></strong> — <small>The inotify extension exposes the inotify functions inotify_init(), inotify_add_watch() and inotify_rm_watch(). As the C inotify_init() function returns a file descriptor, PHP's inotify_init() returns a stream resource, usable with standard stream functions, like stream_select(), stream_set_blocking() and fclose(). inotify_read() replaces the C way of reading inotify events. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.proctitle.html">Proctitle</a></strong> — <small>This extension allows changing the current process', and thread, name on Linux and *BSD systems. This is useful when using pcntl_fork() to identify running processes in process list </small></li>
+		    <br>
+		</ul>
+		</li>
+
+		---------------------------------------
+
+
+		<li>XML Manipulation
+		<ul>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<A Href="php-chunked-xhtml/book.libxml.html">libxml</a></strong> — <small>These functions/constants are available as of PHP 5.1.0, and the following core extensions rely on this libxml extension: DOM, libxml, SimpleXML, SOAP, WDDX, XSL, XSLT, XML, XMLReader, XMLRPC and XMLWriter. </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.xmlreader.html">XMLReader</a></strong> — <small>The XMLReader extension is an XML Pull parser. The reader acts as a cursor going forward on the document stream and stopping at each node on the way. It is important to note that internally, libxml uses the UTF-8 encoding and as such, the encoding of the retrieved contents will always be in UTF-8 encoding. </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.xmlwriter.html">XMLWriter</a></strong> — <small>This is the XMLWriter extension. It wraps the libxml xmlWriter API. This extension represents a writer that provides a non-cached, forward-only means of generating streams or files containing XML data. This extension can be used in an object oriented style or a procedural one. Every method documented describes the alternative procedural call. </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.xml.html">XML Parser</a></strong> — <small>XML (eXtensible Markup Language) is a data format for structured document interchange on the Web. It is a standard defined by The World Wide Web consortium (W3C). Information about XML and related technologies can be found at http://www.w3.org/XML/. This PHP extension implements support for James Clark's expat in PHP. This toolkit lets you parse, but not validate, XML documents. It supports three source character encodings also provided by PHP: US-ASCII, ISO-8859-1 and UTF-8. UTF-16 is not supported. This extension lets you create XML parsers and then define handlers for different XML events. Each XML parser also has a few parameters you can adjust. </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.xsl.html">XSL</a></strong> — <small>The XSL extension implements the XSL standard, performing XSLT transformations using the libxslt library</small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.xslt.html">XSLT (PHP 4)</a></strong> — <small>This PHP extension provides a processor independent API to XSLT transformations. Currently this extension only supports the Sablotron library from the Ginger Alliance. Support is planned for other libraries, such as the Xalan library or the libxslt library. XSLT (Extensible Stylesheet Language (XSL) Transformations) is a language for transforming XML documents into other XML documents. It is a standard defined by The World Wide Web Consortium (W3C). Information about XSLT and related technologies can be found at » http://www.w3.org/TR/xslt. This extension is different than the sablotron extension distributed with versions of PHP prior to PHP 4.1.0, currently only the new XSLT extension in PHP 4.1.0 is supported. If you need support for the old extension, please ask your questions on the PHP mailing lists. This extension has been moved to the PECL repository and is no longer bundled with PHP as of PHP 5.0.0. If you need xslt support with PHP 5 you can use the XSL extension. </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.simplexml.html">SimpleXML</a></strong> — <small>The SimpleXML extension provides a very simple and easily usable toolset to convert XML to an object that can be processed with normal property selectors and array iterators. </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.dom.html">DOM</a></strong> — <small>Document Object Model. The DOM extension allows you to operate on XML documents through the DOM API with PHP 5. The DOM extension uses UTF-8 encoding. Use utf8_encode() and utf8_decode() to work with texts in ISO-8859-1 encoding or Iconv for other encodings. </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.json.html">JSON</a></strong> — <small>JavaScript Object Notation. This extension implements the JavaScript Object Notation (JSON) data-interchange format. The decoding is handled by a parser based on the JSON_checker by Douglas Crockford.  </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.yaml.html">Yaml</a></strong> — <small>YAML Data Serialization. This extension implements the YAML Ain't Markup Language (YAML) data serialization standard. Parsing and emiting are handled by the LibYAML library. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.chdb.html">chdb</a></strong> — <small>Constant hash database.CHDB (constant hash database) is a fast key-value database for constant data, realized by using a memory-mapped file and thus providing the following functionalities: #Extremely fast initial load, regardless of the size of the database. #Only the pages of the file which are actually used are loaded from the disk. #Once a page is loaded it is shared across multiple processes. #Loaded pages are cached across multiple requests and even process recycling. #A typical use of CHDB is as a faster alternative to defining many PHP constants. #CHDB is internally implemented as a hash-table using a » perfect hashing function, thus guaranteeing worst case O(1) lookup time.  </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.sdo.html">SDO</a></strong> — <small>Service Data Objects. 
+			<ul>
+			    <li>		    Service Data Objects (SDOs) enable PHP applications to work with data from different sources (like a database query, an XML file, and a spreadsheet) using a single interface.</li>
+			    <li>		    Each different kind of data source requires a Data Access Service (DAS) to provide access to the data in the data source. In your PHP application, you use a DAS to create an SDO instance that represents some data in the data source. You can then set and get values in the SDO instance using the standard SDO interface. Finally, you use a DAS to write the modified data back to a data source, typically the same one.</li>
+			    <li>		    See the list of Data Access Services for details on those currently available. In addition to the provided DASs, SDO also provides interfaces to enable others to be implemented (see the section on SDO Data Access Services Interface for more details).</li>
+			    <li>		    This extension is derived from concepts taken from the » Service Data Objects specification. It includes a version of the » Apache Tuscany SDO for C++ project.</li>
+			</ul>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Structure of a Service Data Object
+			<ul>
+			    <li>A Service Data Object instance is made up of a tree of data objects. The tree is defined by containment relationships between the data objects. For example, a Company data object might consist of a number of Department data objects and therefore the Company would have a containment relationship to the Departments.</li>
+			    <li>An SDO may also have non-containment references between data objects in the tree. For example, one Employee data object might reference another Employee to identify a career mentor.</li>
+			    <li>As well as data objects referencing each other, they can also have primitive properties. For example, the Company data object might have a property called "name" of type string, for holding the name of the company (for example, "Acme").</li>
+			    <li>Each of these properties of a data object - containment relationships, non-containment references, or primitive properties - may be many-valued or single-valued. In the above examples, Departments is many-valued and the Company name is single-valued.</li>
+			    <li>In PHP, each SDO data object is represented as a PHP object. The properties of the data object can be accessed using either object syntax or associative array syntax. We'll see some examples of this later.</li>
+			</ul>
+		    </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>E&nbsp;<a href="php-chunked-xhtml/book.sdodasrel.html">SDO-DAS-Relational</a></strong> — <small>SDO Relational Data Access Service. 
+			<ul>
+			    <li>In order to use the Relational Data Access Service for Service Data Objects, you will need to understand some of the concepts behind SDO: the data graph, the data object, the disconnected way of working, the change summary, XPath and property expressions, and so on. If you are not familiar with these ideas, you might want to look first at the section on SDO. In addition, the Relational DAS makes use of the PDO extension to isolate itself from specifics of different back-end relational databases. In order to use the Relational DAS you will need to be able to create and pass a PDO database connection; for this reason you might also want to take a look at the section on PDO.</li>
+			    <li>The job of the Relational DAS is to move data between the application and a relational database. In order to do this it needs to be told the mapping between the database entities - tables, columns, primary keys and foreign keys - and the elements of the SDO model - types, properties, containment relationships and so on. You specify this information as metadata when you construct the Relational DAS.</li>
+			</ul>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overview of Operation
+			<ul>
+			    <li>The first step is to call the Relational DAS's constructor, passing the metadata that defines the mapping between database and SDO model. There are examples of this below.</li>
+			    <li>The next step might be to call the executeQuery() or executePreparedQuery() methods on the Relational DAS, passing either a literal SQL statement for the DAS to prepare and execute, or a prepared statement with placeholders and a list of values to be inserted. You may also need to specify a small amount of metadata about the query itself, so that the Relational DAS knows exactly what columns will be returned from the database and in what order. You will also need to pass a PDO database connection.</li>
+			    <li>The return value from executeQuery() or executePreparedQuery() is a normalised data graph containing all the data from the result set. For a query that returns data obtained from a number of tables, this graph will contain a number of data objects, linked by SDO containment relationships. There may also be SDO non-containment references within the data.</li>
+			    <li>Once the query has been executed and the data graph constructed, there is no need for either that instance of the Relational DAS or the database connection. There are no locks held on the database. Both the Relational DAS and the PDO database connection can be garbage collected.</li>
+			    <li>Quite possibly the data in the data graph will go through a number of modifications. The data graph can be serialised into the PHP session and so may have a lifetime beyond just one client-server interaction. Data objects can be created and added to the graph, the data objects already in the graph can be deleted, and data objects in the graph can be modified.</li>
+			    <li>Finally, the changes made to the data graph can be applied back to the database using the applyChanges() method of the Relational DAS. For this, another instance of the Relational DAS must be constructed, using the same metadata, and another connection to the database obtained. The connection and the data graph are passed to applyChanges(). At this point the Relational DAS examines the change summary and generates the necessary INSERT, UPDATE and DELETE SQL statements to apply the changes. Any UPDATE and DELETE statements are qualified with the original values of the data so that should the data have changed in the database in the meantime this will be detected. Assuming no such collisions have occurred the changes will be committed to the database. The application can then continue to work with the data graph, make more changes and apply them, or can discard it.</li>
+			    <li>There are other ways of working with the data in the database: it is possible to just create data objects and write them to the database without a preliminary call to executeQuery(), for example. This scenario and others are explored in the Examples section below. </li>
+			</ul>
+		    </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.sdo-das-xml.html">SDO DAS XML</a></strong> — <small>SDO XML Data Access Service. In order to use the XML Data Access Service for Service Data Objects, you will need to understand some of the concepts behind SDO: the data graph, the data object, XPath and property expressions, and so on. If you are not familiar with these ideas, you might want to look first at the section on SDO. The job of the XML DAS is to move data between the application and an XML data source, which can be either a file or a URL. SDOs are always created and maintained according to a model which defines type names and what property names each type may have. For data which is from XML, this SDO model is built from a schema file written in XML schema language (an xsd file). This schema file is usually passed to the create method when the XMLDAS is initialised. The SDO 2.0 specification defines the mapping between XML types and SDO types. There are a number of small limitations in the PHP support - not everything which is in the specification can be done - and these limitations are summarised in a later section. </small></li>
+
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.domxml.html">DOM XML (PHP 4)</a></strong> — <small>The DOM XML extension has been overhauled in PHP 4.3.0 to better comply with the DOM standard. The extension still contains many old functions, but they should no longer be used. In particular, functions that are not object-oriented should be avoided. The extension allows you to operate on an XML document with the DOM API. It also provides a function domxml_xmltree() to turn the complete XML document into a tree of PHP objects. Currently, this tree should be considered read-only - you can modify it, but this would not make any sense since DomDocument_dump_mem() cannot be applied to it. Therefore, if you want to read an XML file and write a modified version, use DomDocument_create_element(), DomDocument_create_text_node(), set_attribute(), etc. and finally the DomDocument_dump_mem() function. This extension has been moved to the PECL repository and is no longer bundled with PHP as of PHP 5.0.0. This extension is no longer marked experimental. It will, however, never be released with PHP 5, and will only be distributed with PHP 4. If you need DOM XML support with PHP 5 you can use the DOM extension. This domxml extension is not compatible with the DOM extension. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>E&nbsp;<a href="php-chunked-xhtml/book.qtdom.html">qtdom</a></strong> — <small>This extension has been moved to the » PECL repository and is no longer bundled with PHP as of PHP 5.0.0. </small></li>
+		    <br>
+		</ul>
+		</li>
+
+
+		<li>Message protocol
+		<ul>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.soap.html">SOAP</a></strong> — <small>The SOAP extension can be used to write SOAP Servers and Clients. It supports subsets of SOAP 1.1, SOAP 1.2 and WSDL 1.1 specifications. </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>E&nbsp;<a href="php-chunked-xhtml/book.xmlrpc.html">XML-RPC</a></strong> — <small>These functions can be used to write XML-RPC servers and clients. You can find more information about XML-RPC at http://www.xmlrpc.com/, and more documentation on this extension and its functions at http://xmlrpc-epi.sourceforge.net/. </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.wddx.html">WDDX</a></strong> — <small>These functions are intended for work with WDDX. WDDX (Web Distributed Data eXchange) is a programming-language-, platform- and transport-neutral data interchange mechanism to pass data between different environments and different computers. It supports simple data types such as number, string, boolean, etc., and complex aggregates of these in forms such as structures, arrays and recordsets (row/column data, typically coming from database queries). There are WDDX interfaces for a wide variety of languages. ColdFusion, Ruby, Python, PHP, Java, C++, .NET, Actionscript, lisp, Haskell, Perl and various platforms support it very well. //The data is encoded into XML using an XML 1.0 DTD, producing a platform-independent but relatively bulky representation. The XML-encoded data can then be sent to another computer using HTTP, FTP, or other transmission mechanism. The receiving computer must have WDDX-aware software to translate the encoded data into the receiver's native data representation. WDDX can also be used to serialize data structures to storage (file system or database). Many applications use WDDX to pass complex data to browsers where it can be manipulated with JavaScript, as an alternative to JSON. //WDDX and XML-RPC, both created in 1998, were the precursors to SOAP and Web services. SOAP borrows the envelope/header/body structure and the transport + interaction neutrality from WDDX and the HTTP and RPC bindings from XML-RPC.</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.amqp.html">AMQP</a></strong> — <small>AMQP stands for Advanced Message Queue Protocol, which is an open standard middleware layer for message routing and queuing. This extension is compatible with any Version 0-9-1 compatible AMQP broker, such as » RabbitMQ and » OpenAMQ. This extension relies on the » librabbitmq RPC library for communicating with the AMQP broker. Though named "rabbit", this library is compatible with all Version 0-9-1 compatible AMQP brokers. We *HIGHLY* recommend you review the » AMQP specification reference, version 0-9-1. This document will help explain a lot of the calls made available by this extension. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.stomp.html">Stomp</a></strong> — <small>Stomp Client. This extension allows php applications to communicate with any Stomp compliant Message Brokers through easy object oriented and procedural interfaces. STOMP is the Simple (or Streaming) Text Orientated Messaging Protocol. STOMP provides an interoperable wire format so that STOMP clients can communicate with any STOMP message broker to provide easy and widespread messaging interoperability among many languages, platforms and brokers. Simple Design. STOMP is a very simple and easy to implement protocol, coming from the HTTP school of design; the server side may be hard to implement well, but it is very easy to write a client to get yourself connected. For example you can use Telnet to login to any STOMP broker and interact with it! Many developers have told us that they have managed to write a STOMP client in a couple of hours to in their particular language, runtime or platform into the STOMP network. So if your favored language/runtime of choice does not offer a good enough STOMP client don't be afraid to write one. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.sam.html">SAM</a></strong> — <small>Simple Asynchronous Messaging. This extension provides access to the functionality of messaging and queueing systems, such as the IBM WebSphere MQSeries family of products, from PHP scripts. The interface is designed to make it extremely simple to do the more commonly required tasks such as deliver simple text messages to queues while still allowing skilled users to do more complex messaging operations. For many users the complexities of setting up numerous options can be simply ignored. The SAM extension is a framework that provides a very simple API that can be used to access a number of messaging middleware systems. Currently the package includes built-in support for the MQTT (MQ Telemetry Transport) messaging protocol and support for the IBM Messaging and Queuing middleware products. SAM is designed to be readily extended to support other messaging systems and extension modules may be written in C or PHP. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>E&nbsp;<a href="php-chunked-xhtml/book.sca.html">SCA</a></strong> — <small>SCA for PHP makes it possible for a PHP programmer to write reusable components, which can be called in a variety of ways, with an identical interface and with a minimum of fuss. At present components can call each other either locally or via Web services, but in the future it is expected that other ways will be possible. It provides the programmer with a way of doing this which will look as natural as possible in PHP. //SCA components use phpDocumentor-style (see http://www.phpdoc.org/) annotations to declare dependencies on other SCA components or Web services. The SCA for PHP runtime resolves these dependencies at runtime on behalf of the components, and thus allows the PHP programmer to focus on the business logic rather than on locating and obtaining references to dependencies. //The SCA for PHP programming model can be extended to support a number of service types, such as REST and Atompub. However, Web services (more accurately, WSDL defined, SOAP/HTTP services), are the only type currently specified. //Components also use annotations to define the interface which they expose as a service. The SCA for PHP runtime will automatically generate WSDL from these annotations, so that an SCA component is easily exposed as a web service. These annotations are a natural extension to those provided by phpDocumentor. Deploying a Web service can be as simple as placing a PHP component under the document root of a web server. //Components also use annotations to specify data structures (expressed using XML schema complex types) which are then handled using Service Data Objects (SDOs). //A PHP script which is not an SCA component and which contains no annotations can use the services of an SCA component. A PHP script or component can make calls to a web service that is not an SCA component, but using the same system of calls or annotations to obtain a reference. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.mqseries.html">mqseries</a></strong> — <small>This extension aims to provide an interface for communicating with IBMs WebSphere MQ series Queue managers. The interface mimics the C-API client interface of WebSphere MQ Series as close as possible. Using the same naming conventions and possibilities of the C-API. In order to understand the workings of this extension some level of understanding the C-API is required. For MQ-options, MQ-structures, MQ-results etc. please read the WebSphere MQ Application Programming Guide and WebSphere MQ Application Programming Reference. </small></li>
+		    <br>
+		</ul>
+		</li>
+
+
+		<li>Authentication Services
+		<ul>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.kadm5.html">KADM5</a></strong> — <small>To access Kerberos V administration servers, such as create, modify, and delete Kerberos V principals and policies. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.radius.html">Radius</a></strong> — <small>This package is based on the libradius (Remote Authentication Dial In User Service) of FreeBSD. It allows clients to perform authentication and accounting by means of network requests to remote servers. This PECL extension adds full support for Radius Authentication (RFC2865) and Radius Accounting (RFC2866). </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.oauth.html">OAuth</a></strong> — <small>This extension provides OAuth consumer and provider bindings. OAuth is an authorization protocol built on top of HTTP which allows applications to securely access data without having to store usernames and passwords. </small></li>
+		    <br>
+		</ul>
+		</li>
+
+
+
+		---------------------------------------
+
+		<li>Database Extensions
+		<ul>
+		    <li>Abstraction Layers
+		    <ul>
+			<li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.dba.html">DBA</a></strong> — <small>Database (dbm-style) Abstraction Layer. These functions build the foundation for accessing Berkeley DB style databases. This is a general abstraction layer for several file-based databases. As such, functionality is limited to a common subset of features supported by modern databases such as » Oracle Berkeley DB. </small></li>
+			<li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.uodbc.html">ODBC</a></strong> — <small>ODBC (Unified). In addition to normal ODBC support, the Unified ODBC functions in PHP allow you to access several databases that have borrowed the semantics of the ODBC API to implement their own API. Instead of maintaining multiple database drivers that were all nearly identical, these drivers have been unified into a single set of ODBC functions. The following databases are supported by the Unified ODBC functions: » Adabas D, » IBM DB2, » iODBC, » Solid, and » Sybase SQL Anywhere. With the exception of iODBC, there is no ODBC involved when connecting to the above databases. The functions that you use to speak natively to them just happen to share the same names and syntax as the ODBC functions. However, building PHP with iODBC support enables you to use any ODBC-compliant drivers with your PHP applications. More information on iODBC, is available at » www.iodbc.org with the alternative unixODBC available at » www.unixodbc.org. </small></li>
+			<li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.pdo.html">PDO</a></strong> — <small>PHP Data Objects. The PHP Data Objects (PDO) extension defines a lightweight, consistent interface for accessing databases in PHP. Each database driver that implements the PDO interface can expose database-specific features as regular extension functions. Note that you cannot perform any database functions using the PDO extension by itself; you must use a database-specific PDO driver to access a database server. PDO provides a data-access abstraction layer, which means that, regardless of which database you're using, you use the same functions to issue queries and fetch data. PDO does not provide a database abstraction; it doesn't rewrite SQL or emulate missing features. You should use a full-blown abstraction layer if you need that facility. PDO ships with PHP 5.1, and is available as a PECL extension for PHP 5.0; PDO requires the new OO features in the core of PHP 5, and so will not run with earlier versions of PHP. 
+			    <ul>
+				<li>Predefined Constants</li>
+				<li>Connections and Connection management</li>
+				<li>Transactions and auto-commit</li>
+				<li>Prepared statements and stored procedures</li>
+				<li>Errors and error handling</li>
+				<li>Large Objects (LOBs)</li>
+				<li>PDO — The PDO class</li>
+				<li>PDOStatement — The PDOStatement class</li>
+				<li>PDOException — The PDOException class</li>
+				<li>PDO Drivers
+				<ul>
+				    <li><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/ref.pdo-dblib.html">PDO_DBLIB</a> — FreeTDS / Microsoft SQL Server / Sybase</li>
+				    <li><font style="background-color:blue;color:white">B</font>E&nbsp;<a href="php-chunked-xhtml/ref.pdo-firebird.html">PDO_FIREBIRD</a> — Firebird/Interbase 6</li>
+				    <li><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/ref.pdo-mysql.html">PDO_MYSQL</a> — MySQL 3.x/4.x/5.x</li>
+				    <li><font style="background-color:blue;color:white">B</font>E&nbsp;<a href="php-chunked-xhtml/ref.pdo-oci.html">PDO_OCI</a> — Oracle Call Interface</li>
+				    <li><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/ref.pdo-odbc.html">PDO_ODBC</a> — ODBC v3 (IBM DB2, unixODBC and win32 ODBC)</li>
+				    <li><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/ref.pdo-pgsql.html">PDO_PGSQL</a> — PostgreSQL</li>
+				    <li><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/ref.pdo-sqlite.html">PDO_SQLITE</a> — SQLite 3 and SQLite 2</li>
+				    <li><font style="background-color:blue;color:white">B</font>E&nbsp;<a href="php-chunked-xhtml/ref.pdo-sqlsrv.html">PDO_SQLSRV</a> — Microsoft SQL Server / SQL Azure</li>
+				    <li><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/ref.pdo-4d.html">PDO_4D</a> — 4D</li>
+				    <li><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/ref.pdo-cubrid.html">PDO_CUBRID</a> — Cubrid</li>
+				    <li><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/ref.pdo-ibm.html">PDO_IBM</a> — 	IBM DB2</li>
+				    <li><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/ref.pdo-informix.html">PDO_INFORMIX</a> — IBM Informix Dynamic Server</li>
+				</ul>
+				</li>
+			    </ul></li>
+		    </small></li> 
+			<li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.dbx.html">dbx</a></strong> — <small>The dbx module is a database abstraction layer (db 'X', where 'X' is a supported database). The dbx functions allow you to access all supported databases using a single calling convention. The dbx-functions themselves do not interface directly to the databases, but interface to the modules that are used to support these databases. This extension has been moved to the » PECL repository and is no longer bundled with PHP as of PHP 5.1.0. </small></li>
+		</ul>
+		    </li>
+		    <li>Vendor Specific Database Extensions
+		    <ul>
+			<li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/set.mysqlinfo.html">MySQL</a></strong> — <small>MySQL Drivers and Plugins<ul>
+				<li><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.mysql.html">Mysql</a> — Original MySQL API</li>
+				<li><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.mysqli.html">Mysqli</a> — MySQL Improved Extension</li>
+				<li><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.mysqlnd.html">Mysqlnd</a> — MySQL Native Driver</li>
+				<li><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.mysqlnd-ms.html">mysqlnd_ms</a> — Mysqlnd replication and load balancing plugin</li>
+				<li><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.mysqlnd-qc.html">mysqlnd_qc</a> — Mysqlnd query result cache plugin</li>
+				<li><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.mysqlnd-uh.html">mysqlnd_uh</a> — Mysqlnd user handler plugin</li>
+			</ul></small></li>
+			<li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.pgsql.html">PostgreSQL</a></strong></li>
+			<li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;Bindled Drivers</strong> — <small>
+			    <a href="php-chunked-xhtml/book.dbase.html">dBase</a>, 
+			    <a href="php-chunked-xhtml/book.ibase.html">Firebird/InterBase</a>, 
+			    <a href="php-chunked-xhtml/book.msql.html">mSQL</a>, 
+			    <a href="php-chunked-xhtml/book.mssql.html">Mssql</a>, 
+			    <a href="php-chunked-xhtml/book.oci8.html">OCI8</a>, 
+			    <a href="php-chunked-xhtml/book.sqlite.html">SQLite</a>, 
+			    <a href="php-chunked-xhtml/book.sqlite3.html">SQLite3</a>, 
+			    <a href="php-chunked-xhtml/book.sybase.html">Sybase</a>, 
+			</small></li>
+			<li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;PECL Drivers</strong> — <small>
+			    <a href="php-chunked-xhtml/book.fbsql.html">FrontBase</a>, 
+			    <a href="php-chunked-xhtml/book.cubrid.html">CUBRID</a>, 
+			    <a href="php-chunked-xhtml/book.dbplus.html">DB++</a>(Experimental), 
+			    <a href="php-chunked-xhtml/book.filepro.html">filePro</a>, 
+			    <a href="php-chunked-xhtml/book.ibm-db2.html">IBM DB2</a>, 
+			    <a href="php-chunked-xhtml/book.ifx.html">Informix</a>, 
+			    <a href="php-chunked-xhtml/book.ingres.html">Ingres</a>, 
+			    <a href="php-chunked-xhtml/book.maxdb.html">MaxDB</a>, 
+			    <a href="php-chunked-xhtml/book.mongo.html">Mongo</a>, 
+			    <a href="php-chunked-xhtml/book.ovrimos.html">Ovrimos SQL</a>, 
+			    <a href="php-chunked-xhtml/book.paradox.html">Paradox</a>(Experimental), 
+			    <a href="php-chunked-xhtml/book.sqlsrv.html">SQLSRV</a>, 
+			    <a href="php-chunked-xhtml/book.tokyo-tyrant.html">tokyo_tyrant</a>, 
+			</small></li>
+		    </ul>
+		    </li>
+		    <br>
+		</ul>
+		</li>
+
+
+		<li> Remote Data base
+		<ul>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.yaz.html">YAZ</a></strong> — <small>This extension offers a PHP interface to the YAZ toolkit that implements the » Z39.50 Protocol for Information Retrieval. With this extension you can easily implement a Z39.50 origin (client) that searches or scans Z39.50 targets (servers) in parallel. The module hides most of the complexity of Z39.50 so it should be fairly easy to use. It supports persistent stateless connections very similar to those offered by the various RDB APIs that are available for PHP. This means that sessions are stateless but shared among users, thus saving the connect and initialize phase steps in most cases. </small></li>
+		    <br>
+		</ul>
+		</li>
+
+		---------------------------------------
+
+
+
+		<li>Search Engine Extensions
+		<ul>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.solr.html">Solr</a></strong> - <small>Apache Solr is the popular, blazing fast open source enterprise search platform from the Apache Lucene project. Its major features include powerful full-text search, hit highlighting, faceted search, dynamic clustering, database integration, rich document (e.g., Word, PDF) handling, and geospatial search. Solr is highly scalable, providing distributed search and index replication, and it powers the search and navigation features of many of the world's largest internet sites. Solr is written in Java and runs as a standalone full-text search server within a servlet container such as Tomcat. Solr uses the Lucene Java search library at its core for full-text indexing and search, and has REST-like HTTP/XML and JSON APIs that make it easy to use from virtually any programming language. Solr's powerful external configuration allows it to be tailored to almost any type of application without Java coding, and it has an extensive plugin architecture when more advanced customization is required.</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.mnogosearch.html">mnoGoSearch</a></strong> - <small>These functions allow you to access the mnoGoSearch (former UdmSearch) free search engine. mnoGoSearch is a full-featured search engine software for intranet and internet servers, distributed under the GNU license. mnoGoSearch has a number of unique features, which makes it appropriate for a wide range of applications from search within your site to a specialized search system such as cooking recipes or newspaper search, FTP archive search, news articles search, etc. It offers full-text indexing and searching for HTML, PDF, and text documents. mnoGoSearch consists of two parts. The first is an indexing mechanism (indexer). The purpose of the indexer is to walk through HTTP, FTP, NEWS servers or local files, recursively grabbing all the documents and storing meta-data about that documents in an SQL database in a smart and effective manner. After every document is referenced by its corresponding URL, meta-data is collected by the indexer for later use in a search process. The search is performed via Web interface. C, CGI, PHP and Perl search front ends are included. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>E&nbsp;<a href="php-chunked-xhtml/book.swish.html">Swish</a></strong> - <small>Swish Indexing. The swish extension provides the bindings for Swish-e API. Swish-e stands for "Simple Web Indexing System for Humans Enhanced" and is an open source system for indexing and search. Swish-e itself is licensed under GPL license, but uses a clause that allows applications to link against the library if every copy of the combined work is accompanied by the URL to Swish-e source code. Swish-e is a fast, flexible, and free open source system for indexing collections of Web pages or other files. Swish-e is ideally suited for collections of a million documents or smaller. Using the GNOME™ libxml2 parser and a collection of filters, Swish-e can index plain text, e-mail, PDF, HTML, XML, Microsoft® Word/PowerPoint/Excel and just about any file that can be converted to XML or HTML text. Swish-e is also often used to supplement databases like the MySQL® DBMS for very fast full-text searching. 	</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.sphinx.html">Sphinx</a></strong> - <small>Sphinx Client. This extension provides bindings for Sphinx search client library. Sphinx is a standalone search engine meant to provide fast, size-efficient and relevant fulltext search functions to other applications. Sphinx was specially designed to integrate well with SQL databases and scripting languages. Both Sphinx and its client library can be obtained from it's official site </small></li>
+		    <br>
+		</ul>
+		</li>
+
+		=======================================
+
+
+		<li>Basic Text Processing
+		<ul>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.strings.html">Strings</a></strong> — <small>These functions all manipulate strings in various ways. Some more specialized sections can be found in the regular expression and URL handling sections. </small></li>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.url.html">URLs</a></strong> — <small>Dealing with URL strings: encoding, decoding and parsing. </small></li>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.regex.html">POSIX Regex</a></strong> — <small>Regular Expression (POSIX Extended)</small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.pcre.html">PCRE</a></strong> — <small>Regular Expressions (Perl-Compatible)</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.ssdeep.html">ssdeep</a></strong> — <small>ssdeep Fuzzy Hashing</small></li>
+		    <br>
+		</ul>
+		</li>
+
+		<li>Human Language and Character Encoding Support
+		<ul>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.pspell.html">Pspell</a></strong> — <small>These functions allow you to check the spelling of a word and offer suggestions.</small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.gettext.html">Gettext</a></strong> — <small>The gettext functions implement an NLS (Native Language Support) API which can be used to internationalize your PHP applications.</small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<A Href="php-chunked-xhtml/book.mbstring.html">Multibyte String</a></strong> — <small>While there are many languages in which every necessary character can be represented by a one-to-one mapping to an 8-bit value, there are also several languages which require so many characters for written communication that they cannot be contained within the range a mere byte can code (A byte is made up of eight bits. Each bit can contain only two distinct values, one or zero. Because of this, a byte can only represent 256 unique values (two to the power of eight)). Multibyte character encoding schemes were developed to express more than 256 characters in the regular bytewise coding system. //When you manipulate (trim, split, splice, etc.) strings encoded in a multibyte encoding, you need to use special functions since two or more consecutive bytes may represent a single character in such encoding schemes. Otherwise, if you apply a non-multibyte-aware string function to the string, it probably fails to detect the beginning or ending of the multibyte character and ends up with a corrupted garbage string that most likely loses its original meaning. //mbstring provides multibyte specific string functions that help you deal with multibyte encodings in PHP. In addition to that, mbstring handles character encoding conversion between the possible encoding pairs. mbstring is designed to handle Unicode-based encodings such as UTF-8 and UCS-2 and many single-byte encodings for convenience (listed below). </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.iconv.html">iconv</a></strong> — <small>This module contains an interface to iconv character set conversion facility. With this module, you can turn a string represented by a local character set into the one represented by another character set, which may be the Unicode character set. Supported character sets depend on the iconv implementation of your system. Note that the iconv function on some systems may not work as you expect. In such case, it'd be a good idea to install the GNU libiconv library. It will most likely end up with more consistent results. Since PHP 5.0.0, this extension comes with various utility functions that help you to write multilingual scripts. Let's have a look at the following sections to explore the new features. </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.recode.html">Recode</a></strong> — <small>This module contains an interface to the GNU Recode library. The GNU Recode library converts files between various coded character sets and surface encodings. When this cannot be achieved exactly, it may get rid of the offending characters or fall back on approximations. The library recognises or produces nearly 150 different character sets and is able to convert files between almost any pair. Most RFC1345 character sets are supported. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.enchant.html">Enchant</a></strong> — <small>Enchant is the PHP binding for the Enchant library. Enchant steps in to provide uniformity and conformity on top of all spelling libraries, and implement certain features that may be lacking in any individual provider library. Everything should "just work" for any and every definition of "just working." Enchant supports the following backends: Aspell/Pspell (intends to replace Ispell), Ispell (old as sin, could be interpreted as a defacto standard), MySpell/Hunspell (an OOo projects, also used by Mozilla), Uspell (primarily Yiddish, Hebrew, and Eastern European languages - hosted in AbiWord's CVS under the module "uspell"), etc.</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.intl.html">intl</a></strong> — <small>Internationalization extension (further is referred as Intl) is a wrapper for ICU library, enabling PHP programmers to perform UCA-conformant collation and date/time/number/currency formatting in their scripts. It tends to closely follow ICU APIs, so that people having experience working with ICU in either C/C++ or Java could easily use the PHP API. Also, this way ICU documentation would be useful to understand various ICU functions. </small>
+		    <ul>
+			<li><small><strong><a href="php-chunked-xhtml/class.collator.html">Collator</a></strong> — The Collator class, provides string comparison capability with support for appropriate locale-sensitive sort orderings.</small></li>
+			<li><small><strong><a href="php-chunked-xhtml/class.numberformatter.html">NumberFormatter</a></strong> — The NumberFormatter class, allows to display number according to the localized format or given pattern or set of rules, and to parse strings into numbers.</small></li>
+			<li><small><strong><a href="php-chunked-xhtml/class.locale.html">Locale</a></strong> — The Locale class, provides interaction with locale identifiers in the form of functions to get subtags from locale identifier; parse, compose, match(lookup and filter) locale identifiers.</small></li>
+			<li><small><strong><a href="php-chunked-xhtml/class.normalizer.html">Normalizer</a></strong> — The Normalizer class, provides a function to transform text into one of the Unicode normalization forms, and provides a routine to test if a given string is already normalized.</small></li>
+			<li><small><strong><a href="php-chunked-xhtml/class.messageformatter.html">MessageFormatter</a></strong> — The MessageFormatter class, allows to create messages incorporating data (such as numbers or dates) formatted according to given pattern and locale rules, and parse messages extracting data from them.</small></li>
+			<li><small><strong><a href="php-chunked-xhtml/class.intldateformatter.html">IntlDateFormatter</a></strong> — The IntlDateFormatter class</small></li>
+			<li><small><strong><a href="php-chunked-xhtml/class.resourcebundle.html">ResourceBundle</a></strong> — The ResourceBundle class</small></li>
+			<li><small><strong><a href="php-chunked-xhtml/class.spoofchecker.html">Spoofchecker</a></strong> — The Spoofchecker class</small></li>
+			<li><small><strong><a href="php-chunked-xhtml/class.transliterator.html">Transliterator</a></strong> — The Transliterator class</small></li>
+			<li><small>Grapheme Functions</small></li>
+			<li><small>IDN Functions</small></li>
+			<li><small>intl Functions</small></li>
+		    </ul>
+		    </li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.fribidi.html">FriBiDi</a></strong> — <small>FriBiDi is a free implementation of the Unicode Bidirectional Algorithm</small></li>
+		    <br>
+		</ul>
+		</li>
+
+
+		<li>Web Text Processing
+		<ul>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.tidy.html">Tidy</a></strong> — <small>Tidy is a binding for the Tidy HTML clean and repair utility which allows you to not only clean and otherwise manipulate HTML documents, but also traverse the document tree.</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.taint.html">Taint</a></strong> — <small>Taint is an extension, which is used for detecting XSS codes(tainted string). And also can be used to spot sql injection vulnerabilities, and shell inject, etc. When taint is enabled, if you pass a tainted string(comes from $_GET, $_POST or $_COOKIE) to some functions, taint will warn you about that. Cross-site scripting (XSS) is a type of computer security vulnerability typically found in Web applications, such as web browsers through breaches of browser security, that enables attackers to inject client-side script into Web pages viewed by other users. A cross-site scripting vulnerability may be used by attackers to bypass access controls such as the same origin policy. Cross-site scripting carried out on websites accounted for roughly 80.5% of all security vulnerabilities documented by Symantec as of 2007.[1] Their effect may range from a petty nuisance to a significant security risk, depending on the sensitivity of the data handled by the vulnerable site and the nature of any security mitigation implemented by the site's owner.</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.bbcode.html">BBCode</a></strong> — <small>Bulletin Board Code. This extension aims to help parse BBCode text in order to convert it to HTML or another markup language. It uses one pass parsing and provides great speed improvement over the common approach based on regular expressions. Further more, it helps provide valid HTML by reordering open / close tags and by automatically closing unclosed tags. Since 0.10.1 It supports argument quoting with single quotes, double quotes and HTML escaped double quotes. </small></li>
+		    <br>
+		</ul>
+		</li>
+
+
+
+		=======================================
+
+
+		<li> General Mathematical Extensions
+		<ul>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.math.html">Math</a></strong> — <small>Mathematical Functions only handle values within the range of the integer and float types.</small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.bc.html">BC Math</a></strong> — <small>BCMath Arbitrary Precision Mathematics supports numbers of any size and precision, represented as strings.</small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.gmp.html">GMP</a></strong> — <small>GNU Multiple Precision can work with arbitary-length integers by calling GNU MP library.</small></li>
+		    <br>
+		</ul>
+		</li>
+
+		<li> Specific Mathematical Extensions
+		<ul>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.stats.html">Statistics</a></strong> — <small>A wrapper around 2 scientific libraries for statistics, they are DCDFLIB and RANDLIB.</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.lapack.html">Lapack</a></strong> — <small>A wrapper of C binding of LAPACK lib, which is written in Fortran 90 and provides routines for solving systems of simultaneous linear equations, least-squares solutions of linear systems of equations, eigenvalue problems, and singular value problems.</small></li>
+		    <br>
+		</ul>
+		</li>
+
+		---------------------------------------
+
+		<li>Cryptography Extensions
+		<ul>
+		    <li><strong><font style="background-color:black;color:white">C</font>E&nbsp;<a href="php-chunked-xhtml/book.hash.html">Hash</a></strong> — <small>HASH Message Digest Framework which allows direct or incremental processing of arbitrary length messages using a variety of hashing algorithms.</small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.mhash.html">Mhash</a></strong> — <small>Mhash can be used to create checksums, message digests, message authentication codes, and more. This is an interface to the mhash library. Mhash supports a wide variety of hash algorithms such as MD5, SHA1, GOST, and many others.</small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.mcrypt.html">Mcrypt</a></strong> — <small>This is an interface to the mcrypt library, which supports a wide variety of block algorithms such as DES, TripleDES, Blowfish (default), 3-WAY, SAFER-SK64, SAFER-SK128, TWOFISH, TEA, RC2 and GOST in CBC, OFB, CFB and ECB cipher modes. Additionally, it supports RC6 and IDEA which are considered "non-free". CFB/OFB are 8bit by default. </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.openssl.html">OpenSSL</a></strong> — <small>This module uses the functions of OpenSSL for generation and verification of signatures and for sealing (encrypting) and opening (decrypting) data. OpenSSL offers many features that this module currently doesn't support. Some of these may be added in the future. The OpenSSL Project is a collaborative effort to develop a robust, commercial-grade, full-featured, and Open Source toolkit implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1) protocols as well as a full-strength general purpose cryptography library. OpenSSL is used for generation and verification of signatures and for sealing (encrypting) and opening (decrypting) data.</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.crack.html">Crack</a></strong> — <small>Used to test the 'strength' of a password by calling Cracklib</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.quickhash.html"><strong>Quickhash</strong></a></strong> — <small>The quickhash extension contains a set of specific strongly-typed classes to deal with specific set and hash implementations. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.gnupg.html">GnuPG</a></strong> — <small>A wrapper of GNU Privacy Guard, which is the GNU project's complete and free implementation of the OpenPGP standard as defined by RFC4880 . GnuPG allows to encrypt and sign your data and communication, features a versatile key management system as well as access modules for all kinds of public key directories. GnuPG, also known as GPG, is a command line tool with features for easy integration with other applications. A wealth of frontend applications and libraries are available. Version 2 of GnuPG also provides support for S/MIME.</small></li>
+		    <br>
+		</ul>
+		</li>
+
+		---------------------------------------
+
+		<li>Compression and Archive Extensions
+		<ul>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.zlib.html">Zlib</a></strong> — <small>A module used to transparently read and write gzip compressed files.</small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.bzip2.html">Bzip2</a></strong> — <small></small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.zip.html">Zip</a></strong> — <small></small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.rar.html">Rar</a></strong> — <small>Rar Archiving</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.lzf.html">LZF</a></strong> — <small></small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.rpmreader.html">RPM Reader</a></strong> — <small>RPM Header Reading</small></li>
+		    <br>
+		</ul>
+		</li>
+
+		<li>PDF Manipulation
+		<ul>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.fdf.html">FDF</a></strong> — <small>Forms Data Format is a format for handling forms within PDF documents.</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.pdf.html">PDF</a></strong> — <small>Bindings to PDFlib library which is used to create PDF files.</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>E&nbsp;<a href="php-chunked-xhtml/book.haru.html">haru</a></strong> — <small>Bindings to libHaru library which is a cross platform Open source library for generating PDF files.</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>E&nbsp;<a href="php-chunked-xhtml/book.ps.html">PS</a></strong> — <small>Has many similarities with the PDF extension, this extension is used for PostScript document creation</small></li>
+		    <br>
+		</ul>
+		</li>
+
+		<li>Image Processing and Generation
+		<ul>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.exif.html">Exif</a></strong> — <small>Exif means EXchangeable Image Information, which is an extension used to work with image meta data.</small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.image.html">GD</a></strong> — <small>Image Processing and GD, used to create and manipulate image files in a variety of different image format, it can output image streams directly to browser.</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.cairo.html">Cairo</a></strong> — <small>A native extension used to create and modify graphics by a 2D vector Graphics Library Cario.</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.gmagick.html">Gmagick</a></strong> — <small>An extension binding to the GraphicsMagick API, which can deal with more than 88 kinds of major formats.</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>E&nbsp;<a href="php-chunked-xhtml/book.imagick.html">ImageMagick</a></strong> — <small>An extension binding to the ImageMagick API, which can deal with more than 100 formats.</small></li>
+		    <br>
+		</ul>
+		</li>
+
+		<li>Audio Formats Manipulation
+		<ul>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.id3.html">ID3</a></strong> — <small>Read and manipulate ID3 Tags which are used in MP3 files to store meta data of songs.</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.ktaglib.html">KTaglib</a></strong> — <small><small>An object oriented binding to the taglib library to read and write ID3 and Ogg tags, as well as provide access to audio infomation.</small></small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.oggvorbis.html">oggvorbis</a></strong> — <small>This extension adds OGG/Vorbis to PHP's URL Wrappers</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.openal.html">OpenAL</a></strong> — <small>A binding to OpenAL cross-platform 3D Audio library.</small></li>
+		    <br>
+		</ul>
+		</li>
+
+		<li>Flash Manipulation
+		<ul>
+		    <li><strong><font style="background-color:green;color:white">P</font>E&nbsp;<a href="php-chunked-xhtml/book.ming.html">Ming</a></strong> — <small>An open source library used to create SWF format movies, alsmost all of Flash 4's feature supported</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.swf.html">SWF</a></strong> — <small>A library which is used to create Shockwave Flash files via Paul Haeberli's libswf module</small></li>
+		    <br>
+		</ul>
+		</li>
+
+
+		=======================================
+
+		<li>Date and Time Related Extensions
+		<ul>
+		    <li><strong><font style="background-color:black;color:white">C</font><a href="php-chunked-xhtml/book.datetime.html">Date/Time</a></strong> — <small>Date and Time. These functions allow you to get the date and time from the server where your PHP scripts are running. You can use these functions to format the date and time in many different ways. The date and time information is internally stored as a 64-bit number so all conceivably useful dates (including negative years) are supported. The range is from about 292 billion years in the past to the same in the future. Note: Please keep in mind that these functions are dependent on the locale settings of your server. Make sure to take daylight saving time (use e.g. $date = strtotime('+7 days', $date) and not $date += 7*24*60*60) and leap years into consideration when working with these functions. Note: The timezones referenced in this section can be found in the List of Supported Timezones. </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.calendar.html">Calendar</a></strong> — <small>The calendar extension presents a series of functions to simplify converting between different calendar formats. The intermediary or standard it is based on is the Julian Day Count. The Julian Day Count is a count of days starting from January 1st, 4713 B.C. To convert between calendar systems, you must first convert to Julian Day Count, then to the calendar system of your choice. Julian Day Count is very different from the Julian Calendar! </small></li>
+		    <br>
+		</ul>
+		</li>
+
+
+		<li>System Wrapper
+		<ul>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.svm.html">SVM</a></strong> — <small>Support Vector Machine. LibSVM is an efficient solver for SVM classification and regression problems. The svm extension wraps this in a PHP interface for easy use in PHP scripts. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.gearman.html">Gearman</a></strong> — <small>Gearman is a generic application framework for farming out work to multiple machines or processes. It allows applications to complete tasks in parallel, to load balance processing, and to call functions between languages. The framework can be used in a variety of applications, from high-availability web sites to the transport of database replication events. This extension provides classes for writing Gearman clients and workers. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.gupnp.html">Gupnp</a></strong> — <small>GUPnP is an object-oriented open source framework for creating UPnP devices and control points, written in C using GObject and libsoup. This extension wraps GUPnP and provides similar API. All sources and additional documentation can be obtained from the official site </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.memcache.html">Memcache</a></strong> — <small>Memcache module provides handy procedural and object oriented interface to memcached, highly effective caching daemon, which was especially designed to decrease database load in dynamic web applications. The Memcache module also provides a session handler (memcache). More information about memcached can be found at http://www.memcached.org/. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.memcached.html">memcached</a></strong> — <small>memcached is a high-performance, distributed memory object caching system, generic in nature, but intended for use in speeding up dynamic web applications by alleviating database load. this extension uses libmemcached library to provide api for communicating with memcached servers. it also provides a session handler (memcached).information about libmemcached can be found at http://libmemcached.org/libmemcached.html. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.rrd.html">RRD</a></strong> — <small>RRDtool. The PECL/rrd extension provides bindings to the RRDtool C library. RRDtool is the open source industry standard, high performance data logging and graphing system for time series data. </small></li>
+		    <br>
+		</ul>
+		</li>
+
+
+		<li>Network protocol wrapper
+		<ul>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.network.html">Network</a></strong> — <small>Provides various networking functions. </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.snmp.html">SNMP</a></strong> — <small>The SNMP extension provides a very simple and easily usable toolset for managing remote devices via the Simple Network Management Protocol. As it is a wrapper around the underlying Net-SNMP (or UCD-SNMP on older systems) library, all basic concepts are the same and the PHP functions change their behaviour depending on the Net-SNMP configuration files and environment variables. Beginning with PHP 5.4, an OO API is available. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.tcpwrap.html">TCP</a></strong> — <small>TCP Wrappers. The TCP wrappers provides a classical Unix mechanism which has been designed to check if the remote client is able to connect from the given IP address. </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.sockets.html">Sockets</a></strong> — <small>The socket extension implements a low-level interface to the socket communication functions based on the popular BSD sockets, providing the possibility to act as a socket server as well as a client. For a more generic client-side socket interface, see stream_socket_client(), stream_socket_server(), fsockopen(), and pfsockopen(). When using these functions, it is important to remember that while many of them have identical names to their C counterparts, they often have different declarations. Please be sure to read the descriptions to avoid confusion. Those unfamiliar with socket programming can find a lot of useful material in the appropriate Unix man pages, and there is a great deal of tutorial information on socket programming in C on the web, much of which can be applied, with slight modifications, to socket programming in PHP. The » Unix Socket FAQ might be a good start. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.net-gopher.html">Gopher</a></strong> — <small>Net Gopher. The gopher protocol, as defined by » RFC 1436, is generally considered the ancestor of the modern HTTP protocol. However, gopher was also intended to provide references to non-gopher resources including telnet, wais, nntp, and even http. This extension adds gopher support to PHP's URL Wrappers, and provides a helper function gopher_parsedir() to make sense of gopher formatted directory listings. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.http.html">HTTP</a></strong> — <small>The HTTP extension aims to provide a convenient and powerful set of functionality for major applications. The HTTP extension eases handling of HTTP URLs, dates, redirects, headers and messages in a HTTP context (both incoming and outgoing). It also provides means for client negotiation of preferred language and charset, as well as a convenient way to exchange arbitrary data with caching and resuming capabilities. Also provided is a powerful request and parallel interface (PHP 5+), if the extension is built with cURL support. Additionally to the API reference in this manual you can find information about how to install and configure as well as which global constants are predefined in the following sections: </small></li>
+
+		    <br>
+		</ul>
+		</li>
+
+		<li> Client libraries of protocol
+		<ul>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.curl.html">cURL</a></strong> — <small>Client URL Library</small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.ftp.html">FTP</a></strong> — <small>The functions in this extension implement client access to files servers speaking the File Transfer Protocol (FTP) as defined in rfc959. This extension is meant for detailed access to an FTP server providing a wide range of control to the executing script. If you only wish to read from or write to a file on an FTP server, consider using the ftp:// wrapper with the filesystem functions which provide a simpler and more intuitive interface. </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.ldap.html">LDAP</a></strong> — <small>Lightweight Directory Access Protocol. To get the details, refer to the PHP manual.</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.ssh2.html">SSH2</a></strong> — <small>Secure Shell2. Bindings to the libssh2 library which provide access to resources (shell, remote exec, tunneling, file transfer) on a remote machine using a secure cryptographic transport. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</FONT>&nbsp;<a href="php-chunked-xhtml/book.svn.html">SVN</a></strong> — <small>Subversion. This extension implements PHP bindings for Subversion, a version control system, allowing PHP scripts to communicate with SVN repositories and working copies without direct command line calls to the svn executable. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.nis.html">YP/NIS</a></strong> — <small>NIS (formerly called Yellow Pages) allows network management of important administrative files (e.g. the password file). For more information refer to the NIS manpage and »  The Linux NIS(YP)/NYS/NIS+ HOWTO. There is also a book called » Managing NFS and NIS by Hal Stern. </small> </li>
+		    <br>
+		</ul>
+		</li>
+
+
+		<li>Command Line Specific Extensions
+		<ul>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.readline.html">Readline</a></strong> — <small>GNU Readline. The readline functions implement an interface to the GNU Readline library. These are functions that provide editable command lines. An example being the way Bash allows you to use the arrow keys to insert characters or scroll through command history. Because of the interactive nature of this library, it will be of little use for writing Web applications, but may be useful when writing scripts used from a command line. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>E&nbsp;<a href="php-chunked-xhtml/book.ncurses.html">Ncurses</a></strong> — <small>Ncurses Terminal Screen Control. ncurses (new curses) is a free software emulation of curses in System V Rel 4.0 (and above). It uses terminfo format, supports pads, colors, multiple highlights, form characters and function key mapping. Because of the interactive nature of this library, it will be of little use for writing Web applications, but may be useful when writing scripts meant using PHP from the command line. The features available, such as colors, depend on the terminal that you are using. Use functions such as ncurses_has_colors(), ncurses_can_change_color(), and ncurses_has_ic() to check for individual capabilities. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>E&nbsp;<a href="php-chunked-xhtml/book.newt.html">Newt</a></strong> — <small>This is a PHP language extension for RedHat Newt library, a terminal-based window and widget library for writing applications with user friendly interface. Once this extension is enabled in PHP it will provide the use of Newt widgets, such as windows, buttons, checkboxes, radiobuttons, labels, editboxes, scrolls, textareas, scales, etc. Use of this extension if very similar to the original Newt API of C programming language. </small></li>
+		    <br>
+		</ul>
+		</li>
+
+
+
+		---------------------------------------
+
+		<li>Mail Related Extensions
+		<ul>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.mail.html">Mail</a></strong> — <small>The mail() function allows you to send mail. </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.imap.html">IMAP</a></strong> — <small>IMAP, POP3 and NNTP. These functions enable you to operate with the IMAP protocol, as well as the NNTP, POP3 and local mailbox access methods. Be warned, however, that some IMAP functions will not work correctly with the POP protocol. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.cyrus.html">Cyrus</a></strong> — <small>Cyrus IMAP administration. PECL extension.</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.mailparse.html">Mailparse</a></strong> — <small>Mailparse is an extension for parsing and working with email messages. It can deal with RFC822 and RFC2045 (MIME) compliant messages. Mailparse is stream based, which means that it does not keep in-memory copies of the files it processes - so it is very resource efficient when dealing with large messages. Mailparse requires the mbstring extension, and mbstring must be loaded before mailparse. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>E&nbsp;<a href="php-chunked-xhtml/book.vpopmail.html">vpopmail</a></strong> — <small>a PECL extention</small></li>
+		    <br>
+		</ul>
+		</li>
+
+		---------------------------------------
+
+
+		<li>Server Specific Extensions
+		<ul>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.apache.html">Apache</a></strong> — <small>These functions are only available when running PHP as an Apache module. </small></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.nsapi.html">NSAPI</a></strong> — <small>These functions are only available when running PHP as a NSAPI module in Netscape/iPlanet/Sun webservers. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.iisfunc.html">IIS</a></strong> — <small>IIS Administration. This extension is available for Win32 only. It provides functions to administrate Microsoft Internet Information Server (IIS). The extension includes function to create web sites and virtual directories as well as configuring security and script mapping. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.varnish.html">Varnish</a></strong> — <small>Varnish Cache is an open source, state of the art web application accelerator. The extension makes it possible to interact with a running varnish instance through TCP socket or shared memory. </small></li>
+		    <br>
+		</ul>
+		</li>
+
+
+		<li>Session Extensions
+		<ul>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.session.html">Sessions</a></strong> — <small>Session Handling. Session support in PHP consists of a way to preserve certain data across subsequent accesses. This enables you to build more customized applications and increase the appeal of your web site. A visitor accessing your web site is assigned a unique id, the so-called session id. This is either stored in a cookie on the user side or is propagated in the URL. The session support allows you to store data between requests in the $_SESSION superglobal array. When a visitor accesses your site, PHP will check automatically (if session.auto_start is set to 1) or on your request (explicitly through session_start() or implicitly through session_register()) whether a specific session id has been sent with the request. If this is the case, the prior saved environment is recreated. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.session-pgsql.html">Session PgSQL</a></strong> — <small>PostgreSQL Session Save Handler. This module provides an additional session save handler for the session module using PostgreSQL as a storage system. A user-level session storage function may also be used - session_set_save_handler(), but this module is written in C and therefore could be twice as fast, compared to a session save handler written in PHP. Session PgSQL is designed to scale any size of web sites and offers some advanced features: (1)session tables are created automatically. (2)automatic session table vacuum. (3)better garbage collection. (4)multiple PostgreSQL servers support. (5)automatic database server failover (switching). (6)automatic database server load balancing if there are multiple PostgreSQL servers. (7)short circuit UPDATE </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.msession.html">Msession</a></strong> — <small>Mohawk Software Session Handler Functions. msession is an interface to a high speed session daemon which can run either locally or remotely. It is designed to provide consistent session management for a PHP web farm. MCache can best be described as a user customizable high performance object oriented data storage server. It is based on MSession which in turn was based on an unnamed data “mailbox” system written for a beowulf parallel processing project. The primary goal of MCache is to store and retrieve “objects” quickly. The latest version of MCache has a lot of features that take it from its humble beginnings to a full fledged enterprise ready system for web cluster synchronization.</small></li>
+		    <br>
+		</ul>
+		</li>
+
+		<li> Web related basic extension
+		<ul>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.outcontrol.html">Output Control</a></strong> — <small>Output Buffering Control. The Output Control functions allow you to control when output is sent from the script. This can be useful in several different situations, especially if you need to send headers to the browser after your script has began outputting data. The Output Control functions do not affect headers sent using header() or setcookie(), only functions such as echo and data between blocks of PHP code. </small></li>
+		    <li><strong><font style="background-color:black;color:white">C</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.misc.html">Misc</a></strong> — <small>Miscellaneous Functions. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.fam.html">FAM</a></strong> — <small>File Alteration Monitor. FAM monitors files and directories, notifying interested applications of changes. More information about FAM is available at » http://oss.sgi.com/projects/fam/. A PHP script may specify a list of files for FAM to monitor using the functions provided by this extension. The FAM process is started when the first connection from any application to it is opened. It exits after all connections to it have been closed. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.htscanner.html">htscanner</a></strong> — <small>htaccess-like support for all SAPIs. The htscanner extension gives the possibility to use htaccess-like file to configure PHP per directory, just like apache's htaccess. It is especially useful with fastcgi (ISS5/6/7, lighttpd, etc.). </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.phar.html">Phar</a></strong> — <small></small></li>
+		    <br>
+		</ul>
+		</li>
+
+		<li> Other extensions
+		<ul>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.yaf.html">Yaf</a></strong> — <small>The Yet Another Framework(Yaf) extension is a PHP framework, used for developing web application, It provides OO interfaces to PHPer for developing web application. Yaf require PHP version greater than 5.2.1, and could not run with early version of PHP. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.v8js.html">V8js</a></strong> — <small>V8 Javascript Engine Integration. This extension embeds the V8 Javascript Engine into PHP. </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.geoip.html">GeoIP</a></strong> — <small>Geo IP Location. The GeoIP extension allows you to find the location of an IP address. City, State, Country, Longitude, Latitude, and other information as all, such as ISP and connection type can be obtained with the help of GeoIP. </small></li>
+		    <br>
+		</ul>
+		</li>
+
+
+
+		=======================================
+
+		<li>Windows Only Extensions
+		<ul>
+		    <li><strong><font style="background-color:blue;color:white">B</font>E&nbsp;<a href="php-chunked-xhtml/book.dotnet.html">.NET</a></strong></li>
+		    <li><strong><font style="background-color:blue;color:white">B</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.com.html">COM</a></strong> — <small>COM and .Net (Windows)</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.printer.html">Printer</a></strong> — <small></small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>E&nbsp;<a href="php-chunked-xhtml/book.w32api.html">W32api</a></strong> — <small></small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.win32ps.html">win32ps</a></strong> — <small></small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.win32service.html">win32service</a></strong> — <small></small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.wincache.html">WinCache</a></strong> — <small>Windows Cache for PHP</small></li>
+		    <br>
+
+		</ul>
+		</li>
+
+		<li>Credit Card Processing
+		<ul>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.mcve.html">MCVE</a></strong> — <small>MCVE (Monetra) Payment</small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.spplus.html">SPPLUS</a></strong> — SPPLUS Payment System<small></small></li>
+		    <br>
+		</ul>
+		</li>
+
+		<li>Other Services
+		<ul>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.hw.html">Hyperwave</a></strong> — <small></small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>&nbsp;&nbsp;&nbsp;<a href="php-chunked-xhtml/book.hwapi.html">Hyperwave API</a></strong> — <small> </small></li>
+		    <li><strong><font style="background-color:green;color:white">P</font>E&nbsp;<a href="php-chunked-xhtml/book.notes.html">Lotus Notes</a></strong> — <small></small></li>
+		    <br>
+		</ul>
+		</li>
+
+
+
+		<br>
+	    </ul>
+	</div>
+	</body>
+	</html>
