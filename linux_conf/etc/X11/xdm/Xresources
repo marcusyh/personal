@@ -1,0 +1,62 @@
+! $Xorg: Xresources,v 1.3 2000/08/17 19:54:17 cpqbld Exp $
+!
+!
+!
+!
+! $XFree86: xc/programs/xdm/config/Xres.cpp,v 1.6 2003/01/04 03:11:31 dawes Exp $
+!
+
+Xcursor.theme: whiteglass
+
+
+
+xlogin*login.translations: #override \
+	Ctrl<Key>R: abort-display()\n\
+	<Key>F1: set-session-argument(failsafe) finish-field()\n\
+	<Key>Delete: delete-character()\n\
+	<Key>Left: move-backward-character()\n\
+	<Key>Right: move-forward-character()\n\
+	<Key>Home: move-to-begining()\n\
+	<Key>End: move-to-end()\n\
+	Ctrl<Key>KP_Enter: set-session-argument(failsafe) finish-field()\n\
+	<Key>KP_Enter: set-session-argument() finish-field()\n\
+	Ctrl<Key>Return: set-session-argument(failsafe) finish-field()\n\
+	<Key>Return: set-session-argument() finish-field()
+
+xlogin*greeting: No pains, No gains
+#CLIENTHOST
+#xlogin*namePrompt: \040\040\040\040\040\040\040Login:
+xlogin*fail: Login incorrect
+
+# border
+xlogin*shdColor: grey30
+xlogin*hiColor: grey30
+
+# background of box
+xlogin*background: #222222
+
+# welcome line
+xlogin*greetColor: grey70
+
+# login name/ password
+*Foreground: grey30
+*Background: grey30
+
+# input text
+xlogin*foreground: grey40
+
+xlogin*failColor: red
+
+
+XConsole.text.geometry:	480x130
+XConsole.verbose:	true
+XConsole*iconic:	true
+XConsole*font:		fixed
+
+Chooser*geometry:		700x500+300+200
+Chooser*allowShellResize:	false
+Chooser*viewport.forceBars:	true
+Chooser*label.font:		*-new century schoolbook-bold-i-normal-*-240-*
+Chooser*label.label:		XDMCP Host Menu from CLIENTHOST
+Chooser*list.font:		-*-*-medium-r-normal-*-*-230-*-*-c-*-iso8859-1
+Chooser*Command.font:		*-new century schoolbook-bold-r-normal-*-180-*

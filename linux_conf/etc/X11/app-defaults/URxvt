@@ -1,0 +1,75 @@
+! System-wide defaults for rxvt-unicode
+!
+! PLEASE NOTE: URxvt.* resources set here will override users' Rxvt.*
+! resources. Edit with care.
+
+! Uncomment to use the historical terminfo entry
+
+!URxvt.termName: rxvt
+
+! Uncomment for color/font settings like in Debian's uxterm
+
+!URxvt.font: xft:Bitstream Vera Sans Mono:style=Roman:pixelsize=12
+!URxvt*font:-*-courier-medium-r-normal-*-*-100-*-*-*-*-iso8859-1
+URxvt.font: -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1
+!URxvt*boldFont:-*-courier-medium-r-normal-*-*-100-*-*-*-*-iso8859-1
+!URxvt*boldFont: xft:Bitstream Vera Sans Mono:style=Bold:pixelsize=12
+URxvt.boldFont: xft:Bitstream Vera Sans Mono:style=Roman:pixelsize=12
+!URxvt*boldFont: xft:Bitstream Vera Sans Mono:style=Regular:pixelsize=12
+!URxvt.font:xft:文泉驿等宽正黑:size=9:style=Regular:antialias=true,xft:文泉驿等宽正黑:size=8:style=Regular:antialias=true
+!URxvt.boldfont:xft:文泉驿等宽正黑:size=9:style=BOld:antialias=true,xft:文泉驿等宽正黑:size=8:style=Bold:antialias=true
+
+
+URxvt.color0: black
+URxvt.color1: red3
+URxvt.color2: green3
+URxvt.color3: yellow3
+URxvt.color4: DodgerBlue1
+URxvt.color5: magenta3
+URxvt.color6: cyan3
+URxvt.color7: #cccccc
+URxvt.color8: #aaaaaa
+URxvt.color9: red
+URxvt.color10: green
+URxvt.color11: yellow
+URxvt.color12: #77aaff
+URxvt.color13: magenta
+URxvt.color14: cyan
+URxvt.color15: #cccccc
+URxvt.colorUL: #cccccc
+URxvt.colorBD: yellow4
+URxvt.background: black
+URxvt.foreground: #cccccc
+URxvt.scrollBar: false
+!URxvt.reverseVideo: true
+
+! Examples for custom keysyms overrides
+
+!URxvt.keysym.KP_Up: ^[[A
+!URxvt.keysym.KP_Right: ^[[C
+!URxvt.keysym.KP_Left: ^[[D
+!URxvt.keysym.KP_Down: ^[[B
+!URxvt.keysym.KP_Insert: ^[[2~
+!URxvt.keysym.KP_Delete: ^[[3~
+!URxvt.keysym.KP_Add: +
+!URxvt.keysym.KP_Subtract: -
+!URxvt.keysym.KP_Multiply: *
+!URxvt.keysym.KP_Divide: /
+!URxvt.keysym.KP_Enter: ^M
+
+! Uncomment for aterm-like scrolling keys
+
+!URxvt.keysym.Shift-Up: command:\033]720;1\007
+!URxvt.keysym.Shift-Down: command:\033]721;1\007
+
+
+! tint with any color; i.e., blue, red, tomato4, olivedrab2, etc.
+!   some nice listings are at:
+!     http://www.nisrv.com/modules.php?name=Hex_Colors
+!     http://www.htmlgoodies.com/tutorials/colors/article.php/3478921
+URxvt*tintColor:blue
+
+! scrollback buffer lines - 65535 is max (64 is default)
+URxvt*saveLines:65535
+! transparency - true or false (default)
+URxvt*transparent:true
