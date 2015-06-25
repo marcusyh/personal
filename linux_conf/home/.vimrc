@@ -1,5 +1,6 @@
 set background=dark
-colorscheme desert
+"colorscheme desert
+:colorscheme pychimp
 
 set cindent
 set smartindent
@@ -30,7 +31,7 @@ highlight Search term=reverse ctermbg=4 ctermfg=7
 ""highlight Comment ctermfg=darkcyan
 "highlight Comment ctermfg=blue
 """""""""""""""""""""""""""""""""""""""""""""
-colorscheme dawn
+"colorscheme dawn
 
 "setting cscope
 set cscopequickfix=s-,c-,d-,i-,t-,e-
