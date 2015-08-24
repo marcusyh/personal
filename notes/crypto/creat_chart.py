@@ -1,14 +1,17 @@
 import urllib2
 import json
+import sys
+
+flag = 'BTC_%s' %(sys.argv[1].upper())
 
 src = urllib2.urlopen('https://poloniex.com/public?command=returnTicker')
 dt  = src.read()
 src.close()
 
 dct = json.loads(dt)
-price = float(dct['BTC_ETH']['last'])
+price = float(dct[flag]['last'])
 
-src = urllib2.urlopen('https://poloniex.com/public?command=returnOrderBook&currencyPair=BTC_ETH&depth=100000')
+src = urllib2.urlopen('https://poloniex.com/public?command=returnOrderBook&currencyPair=%s&depth=100000' %flag)
 dt  = src.read()
 src.close()
 
