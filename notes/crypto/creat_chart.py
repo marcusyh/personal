@@ -22,27 +22,27 @@ def get_raw(flag, price, source):
             cur_btc      = price * cur_product
         sum_btc     += cur_btc
         sum_product += cur_product
-        raw_list.append([cur_price, cur_btc, sum_btc, cur_product, sum_product])
+        raw_list.append([cur_price, cur_source, cur_btc, sum_btc, cur_product, sum_product])
     return raw_list
 
 def remove_fate(dlist):
-    raw_sum = dlist[-1][2]
+    raw_sum = dlist[-1][3]
     print raw_sum
     cur_sum = 0
     for d in dlist:
-        if d[1] > raw_sum * MAX:
-            d.append(d[1] * -0.1)
+        if d[2] > raw_sum * MAX:
+            d.append(d[2] * -0.01 - 2)
             d.append(cur_sum)
             continue
-        cur_sum += d[1]
-        d.append(d[1])
+        cur_sum += d[2]
+        d.append(d[2])
         d.append(cur_sum)
 
 def mark_robot(dlist):
     trust_sum = dlist[-1][6]
     for d in dlist:
-        if d[1] < trust_sum * MIN:
-            d[5] *= -10
+        if d[2] < trust_sum * MIN:
+            d[6] *= -1
 
 def add_count(price, dlist):
     delta_sum   = 0
@@ -52,10 +52,10 @@ def add_count(price, dlist):
     for d in dlist:
         if abs(d[0] - price) > delta_price:
             break
-        if d[5] < 0:
+        if d[6] < 0:
             continue
         delta_count += 1
-        delta_sum   += d[5]
+        delta_sum   += d[6]
 
     avg_price = delta_sum /delta_count
 
@@ -63,7 +63,7 @@ def add_count(price, dlist):
     for d in dlist:
         count += 1
         d.append(delta_sum * count / delta_count)
-        d.append(avg_price if d[5] >= 0 else d[5])
+        d.append(avg_price if d[6] >= 0 else d[6])
 
 
 
