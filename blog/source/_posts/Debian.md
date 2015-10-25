@@ -1,4 +1,4 @@
-title: "Issues"
+title: "Debian"
 date: 2015-05-27 18:46:06
 tags:
 ---
@@ -12,3 +12,5 @@ tags:
 Notes:
 Also a knowledge that [avahi-autoipd](http://linux.die.net/man/8/avahi-autoipd), [Avahi](https://wiki.archlinux.org/index.php/Avahi), [Zero-configuration networking](http://en.wikipedia.org/wiki/Zero-configuration_networking)
 
+##Brightness for Hasee K650D i5 D2 (Clevo W650SJ infact):
+[Backlight](https://wiki.archlinux.org/index.php/Backlight)
