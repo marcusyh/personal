@@ -2,7 +2,7 @@ import urllib2
 import json
 import sys
 
-MAX = 0.02
+MAX = 0.005
 MIN = 0.000005
 RULE = 0.1
 
@@ -44,9 +44,9 @@ def mark_robot(dlist):
         if d[2] < trust_sum * MIN:
             d[6] *= -1
 
-def add_count(price, dlist):
+def get_avg_price(price, dlist):
     delta_sum   = 0
-    delta_count = 0
+    delta_count = 1
 
     delta_price = price * RULE 
     for d in dlist:
@@ -57,12 +57,14 @@ def add_count(price, dlist):
         delta_count += 1
         delta_sum   += d[6]
 
-    avg_price = delta_sum /delta_count
+    avg_price = delta_sum / delta_count
+    return avg_price
 
+def add_count(avg_price, dlist):
     count = 0
     for d in dlist:
         count += 1
-        d.append(delta_sum * count / delta_count)
+        d.append(avg_price * count)
         d.append(avg_price if d[6] >= 0 else d[6])
 
 
@@ -89,14 +91,15 @@ remove_fate(bids)
 remove_fate(asks)
 mark_robot(bids)
 mark_robot(asks)
-add_count(price, bids)
-add_count(price, asks)
+avg_price = get_avg_price(price, bids)
+add_count(avg_price, bids)
+add_count(avg_price, asks)
 
 bids.reverse()
 real_list = bids + asks
 
 range = 0.1
-while range <= 10:
+while range <= 10.1:
     hdlr = open('/tmp/%s%s' %(crypto, int(range*100 + 0.1)), 'w')
     for x in real_list:
         if x[0] <= price * (1 - range) or x[0] >= price * (1 + range):
