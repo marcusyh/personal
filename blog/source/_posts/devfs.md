@@ -17,6 +17,9 @@ What are those /dev/ Files?
 
 A device file or special file is **an interface for a device driver** that appears in a file system **as if it were an ordinary file**, it allow software to interact with a device driver using standard input/output system calls, which simplifies many tasks and unifies user-space I/O mechanisms.
 
+**Linux Device List** [16 commands to check hardware information on Linux](http://www.binarytides.com/linux-commands-hardware-info/)
+udev [wikipedia](https://en.wikipedia.org/wiki/Udev) [archlinux](https://wiki.archlinux.org/index.php/udev)
+
 
 tty, pty, pts, ptmx, console, xconsole
 man 4 pts
