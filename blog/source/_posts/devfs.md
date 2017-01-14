@@ -13,3 +13,16 @@ The difference between /proc and /sys
 
 What are those /dev/ Files?
 [What are those /dev/ Files?](http://www.linux.org/threads/what-are-those-dev-files.4713/)
+
+
+A device file or special file is **an interface for a device driver** that appears in a file system **as if it were an ordinary file**, it allow software to interact with a device driver using standard input/output system calls, which simplifies many tasks and unifies user-space I/O mechanisms.
+
+
+tty, pty, pts, ptmx, console, xconsole
+man 4 pts
+[wikipedia: devpts](https://en.wikipedia.org/wiki/Devpts)
+[Pseudoterminal](https://en.wikipedia.org/wiki/Pseudoterminal)
+[tty/pty/pts/ptmx详解](http://www.51testing.com/html/44/175444-81943.html)
+[Linux Containers, /dev/pts/ptmx, and Gentoo](https://www.preney.ca/paul/archives/212)
+
+ls --ignore={sda,tty,vbox,vcs,loop}*
