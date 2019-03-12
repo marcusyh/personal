@@ -4,6 +4,7 @@ from read_data import read_hougai
 from classify_data import get_classified
 from classify_data import add_alter
 from save_file import save_to_docx
+from save_file import save_to_csv
 
 
 FILENAME = '常用汉字列表音読み'
@@ -18,4 +19,4 @@ if __name__ == '__main__':
     hira, kata = get_classified(jouyou, jinmei, hougai)
     kata, remains = add_alter(kata)
 
-    save_sets(kata, FILEPATH, FILENAME)
+    save_to_docx(kata, FILENAME, FILEPATH)

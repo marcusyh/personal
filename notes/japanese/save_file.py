@@ -39,8 +39,8 @@ def save_to_docx_old(sets, filename, filepath):
 
 
 def save_to_csv(sets, filename, filepath):
-    h = open('%s/%.csv' %(filepath, filename), 'w')
-    h.write('%s, 漢字\n' %name)
+    h = open('%s/%s.csv' %(filepath, filename), 'w')
+    h.write('%s, 漢字\n' %filename)
     for a in sorted(sets.keys()):
         h.write(a + ',' + '、'.join(sets[a].keys()) + '\n')
     h.close()

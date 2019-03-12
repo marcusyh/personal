@@ -31,7 +31,7 @@ def _get_result(kanji):
 
 
 def get_classified(*args):
-    return _get_result(_reorgnize(args))
+    return _get_result(_reorgnize(*args))
 
 def add_alter(sets):
     tmp = {}
@@ -89,3 +89,9 @@ def add_alter(sets):
                 remains[j][i] = k
 
     return newsets, remains
+
+if __name__ == '__main__':
+    a = {'a1': {'a11': 'a111', 'a12': 'a121'}, 'a1': {'a11': 'a111', 'a12': 'a121'}}
+    b = {'b1': {'b11': 'b111', 'b12': 'b121'}, 'b1': {'b11': 'b111', 'b12': 'b121'}}
+    c = {'c1': {'c11': 'c111', 'c12': 'c121'}, 'c1': {'c11': 'c111', 'c12': 'c121'}, '': {}}
+    x, y = get_classified(a, b, c)

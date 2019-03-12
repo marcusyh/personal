@@ -15,38 +15,41 @@ def readfile(dirname):
 
 def deal_joyokanji(source, appendix):
     kanji_set = {}
-    
-    kanji = {}
     previous = '*'
+    
     ji = []
-    ji_in = {}
+    ji_flag = True
+    yomi = {}
     for current in source:
-        if current == '':
+        if current == '' or current == '*' and previous == '*':
             continue
-        if current == '*' and previous == '*':
-            continue
+
         if current == '*':
             previous = current
-            kanji_set['/'.join(ji)] = kanji
+            kanji_set['/'.join(ji)] = yomi
             ji = []
-            kanji = {}
+            ji_flag = True
+            yomi = {}
+            continue
+
+        ji_flag = len(current) == 1 and ji_flag
+        if ji_flag:
+            ji.append(current + appendix)
+            continue
+
+        items = [x.strip() for x in current.split('\t')]
+        if len(items) > 3:
+            print(items)
+        elif len(items) == 3 and len(ji) == 0 and len(items[0]) == 1:
+            ji.append(items[0] + appendix)
+            yomi[items[1]] = items[2]
+        elif len(items) == 3:
+            print(items)
+        elif len(items) == 2:
+            yomi[items[0]] = items[1]
         else:
-            if len(current) == 1:
-                ji.append(current + appendix)
-            else:
-                items = [x.strip() for x in current.split('\t')]
-                if len(items) > 3:
-                    print(items)
-                elif len(items) == 3 and len(ji) == 0 and len(items[0]) == 1:
-                    ji.append(items[0] + appendix)
-                    kanji[items[1]] = items[2]
-                elif len(items) == 3:
-                    print(items)
-                elif len(items) == 2:
-                    kanji[items[0]] = items[1]
-                else:
-                    kanji[''] = current
-            previous = current
+            yomi[items[0]] = ''
+        previous = current
 
     return kanji_set
 
