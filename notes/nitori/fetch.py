@@ -2,18 +2,23 @@ import os
 import sys
 import shutil
 
-def get_src_sync_flist(syncfile):
-    synclist = {}
-    h = open(syncfile, 'r')
-    for l in h.readlines():
-        f = l.strip().replace('#', '/').replace('\\', '/')
-        synclist[f] = synclist.get(f, 0) + 1
-    h.close()
-    return sum(synclist.values()), list(synclist.keys())
+def get_source_files(syncfiles):
+    syncpool = {}
+    for k, v in syncfiles.items():
+        f = k.strip().strip('0x000d').replace('#', '/').replace('\\', '/').replace('//', '/')
+        if not f:
+            continue
+        if '.xls/' in f:
+            f = f.split('.xls/')[0] + '.xls'
+        if '.xlsm/' in f:
+            f = f.split('.xlsm/')[0] + '.xlsm'
+        if f not in syncpool:
+            syncpool[f] = []
+        syncpool[f] = syncpool[f] + v
+    return syncpool
 
-
-def get_sync_flist(src_dir, synclist):
-    syncflist = {
+def get_sync_files(src_dir, syncpool):
+    syncfiles = {
             "match": {},
             "missing": {}
             }
@@ -24,38 +29,49 @@ def get_sync_flist(src_dir, synclist):
             if os.path.isfile(fpath):
                 tmplist.append(fpath)
 
-    for f in synclist:
+    for f in syncpool.keys():
         fpath = os.path.join(src_dir, f)
+        value = syncpool[f]
 
         if os.path.isfile(fpath):
-            if fpath in syncflist['match']:
-                print(fpath, f)
-            syncflist['match'][fpath] = ''
+            if fpath in syncfiles['match']:
+                #print('exists', fpath, f)
+                syncfiles['match'][fpath] += value
+            else:
+                syncfiles['match'][fpath] = value
             continue
         
         if f.endswith('.frm'):
             t = f.replace('.frm', '.vb')
-            print('replaced %s to %s' %(f, t))
+            #print('replaced %s to %s' %(f, t))
             f = t
         spaths = []
         for spath in tmplist:
             if spath.find(f) >=0:
                 spaths.append(spath)
         if not spaths:
-            if fpath in syncflist['missing']:
-                print(fpath, f)
-            syncflist['missing'][f] = ''
+            if fpath in syncfiles['missing']:
+                #print('exists', fpath, f)
+                syncfiles['missing'][fpath] += value
+            else:
+                syncfiles['missing'][f] = value
         elif len(spaths) == 1:
-            if fpath in syncflist['match']:
-                print(fpath, f)
-            fpath = spaths[0]
-            syncflist['match'][fpath] = ''
+            if fpath in syncfiles['match']:
+                #print('exists', fpath, f)
+                syncfiles['match'][fpath] += value
+            else:
+                fpath = spaths[0]
+                syncfiles['match'][fpath] = value
         else:
-            print('\n'.join([x for x in spaths]))
+            if fpath in syncfiles['missing']:
+                #print('exists', fpath, f)
+                syncfiles['missing'][fpath] += value
+            else:
+                syncfiles['missing'][f] = value
+            print(f, value)
+            print('\n'.join([x for x in spaths]) + '\n\n')
 
-             
-    return list(syncflist['match'].keys()), list(syncflist['missing'].keys())
-
+    return syncfiles['match'], syncfiles['missing']
 
 def sync_files(dst_dir, flist):
     for fpath in flist:
@@ -65,42 +81,20 @@ def sync_files(dst_dir, flist):
         shutil.copy2(fpath, dirname)
 
 
-def sync_file(source, destination, syncfile):
-    total, synclist = get_src_sync_flist(syncfile)
-
-    source1 = os.path.join(source, '01_本部', '01_VB／Excel')
-    source2 = os.path.join(source, '02_店舗', '01_VB／Excel')
-    source3 = os.path.join(source, '03_海外拠点', '01_VB／Excel')
+def copy_files(source, destination, syncfile):
+    syncpool = get_source_files(syncfile)
+    total = sum([len(x) for x in syncpool.values()])
+    unique = len(syncpool)
     
-    if os.path.isdir(source1) or os.path.isdir(source2):
-        finishlist2, missinglist = get_sync_flist(source2, synclist)
-        sync_files(destination, finishlist2)
-        print(source2, len(synclist), len(finishlist2), len(missinglist))
+    matched = {}
+    for i in ['02_店舗', '03_海外拠点/01_台湾', '01_本部']:
+        source_dir = os.path.join(source, i, '103_VB' if i == '03_海外拠点/01_台湾' else '01_VB／Excel')
 
-        finishlist1, missinglist = get_sync_flist(source1, missinglist)
-        sync_files(destination, finishlist1)
-        print(source1, len(synclist), len(finishlist1), len(missinglist))
-        
-        finishlist3, missinglist = get_sync_flist(source3, missinglist)
-        sync_files(destination, finishlist3)
-        print(source3, len(synclist), len(finishlist3), len(missinglist))
-        
-        return total, len(synclist), finishlist2 + finishlist1 + finishlist3, missinglist
+        if not os.path.isdir(source_dir):
+            continue
 
+        a, syncpool = get_sync_files(source_dir, syncpool)
+        matched.update(a)
 
-    finishlist, missinglist = get_sync_flist(source, synclist)
-    sync_files(destination, finishlist)
-    return total, len(synclist), finishlist, missinglist
-
-
-
-if __name__ == '__main__':
-    if len(sys.argv) != 4:
-        print('3 parameters needed.')
-        sys.exit(0)
-    total, unique, finish, missing = sync_file(sys.argv[1], sys.argv[2], sys.argv[3])
-    print('总共%s行，排重之后%s个，提取了%s个，%s个缺失\n' %(total, unique, len(finish), len(missing)))
-    for f in missing:
-        print('\t%s' %f)
-
-
+    sync_files(destination, matched.keys())
+    return total, unique, matched, syncpool 
