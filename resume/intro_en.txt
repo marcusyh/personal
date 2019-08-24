@@ -1,0 +1,13 @@
+My name is XXXX, my English name is XXXX. I was born in XXXX province, XXXX, at XXXX, and was graduated from XXXX University at XXXX. My major was XXXX. 
+
+I worked as a testing engineer of Linux based virtualization software in the beginning 4 years after my graduation, and then, entered a company that provides video services for XXXX intelligence televisions. I kept working in that company’s data team as a python developer for 7 years.
+
+We received the tv playing log that the users allowed to send to us. User logs sent by HTTP POST requests. These HTTP requests were transferred to 4 receiving machines by our front-end load balance server. In each receiving machine, nginx was configured to save these http post data to files, then, these files were compressed to bzip2 format, and sent to the ETL program and the backup machine by bash scripts. ETL program extracted data from files, converted it to line to line json format, added related data fetched from the CMS system and public internet, and loaded it to HDFS and partially to MySQL. Crontab scheduled python programs were deployed to calculate every kinds of statistics data daily, weekly, monthly, and annually, and to save the results to HBase and MySQL. The data provider service queried from HBase and MySQL to provide statistics chart and diagram to the data users. We also developed a recommendation system based on Collaborative Filtering algorithm by user’s watching history. 
+
+After came to Japan, I’ve taken part in an upgrade project of a selling and store management system, my jobs in this team are drawing workflow diagrams by the existing code, testing the new programs, tracing bugs and providing bug fix advices to the developers. This project will be finished at the end of this July.
+
+My favorite and most fluently used technologies are Linux, Python, and MySQL. Starting to use Linux when at the university about 15 years ago, I’m familiar with almost every aspect of this operating system.  I’m good at python, both python 2.7 and python 3, and have finished many projects by it in the past 7 years. I’m also skilled in relational databases such as MySQL and data processing platforms such as Hadoop and Elasticsearch.
+
+Beyond that, I’m familiar with C, java, C#, Perl, PHP, JavaScript, and familiar with virtualization, container, software engineering, network, web, blockchain, etc.
+
+As a quick learner who enjoys coding time, I will do my best if lucky enough to join in your team.
