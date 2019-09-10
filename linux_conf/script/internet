@@ -1,0 +1,23 @@
+#!/bin/bash
+export http_proxy=http://xxx.xxx.xxx.xxx:80/ 
+export ftp_proxy=ftp://xxx.xxx.xxx.xxx:80/ 
+export socks_proxy=socks://xxx.xxx.xxx.xxx:80/ 
+export https_proxy=https://xxx.xxx.xxx.xxx:80/ 
+
+if [ -z $(git config --global --name-only -l |grep remote.origin.proxy |xargs) ] 
+then 
+    git config --global --add remote.origin.proxy ""
+fi
+gsed -i 's/proxy.*/proxy = xxx\.xxx\.xxx\.xxx:80/' ~/.gitconfig
+
+if [ -z $(git config --global --name-only -l |grep user.name |xargs) ] 
+then 
+    git config --global --add user.name ""
+fi
+gsed -i 's/name.*/name = xxxxx/' ~/.gitconfig
+
+if [ -z $(git config --global --name-only -l |grep user.email |xargs) ] 
+then 
+    git config --global --add user.email ""
+fi
+gsed -i 's/email.*/email = xxxxx@xxxx.xxx/' ~/.gitconfig

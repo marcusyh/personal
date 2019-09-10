@@ -1,0 +1,3 @@
+alias ls='ls -G --color'
+alias mtree="find . -print | sed -e 's;[^/]*/;|________;g;s;________|; |;g'"
+alias tree="tree $@ --charset=unicode|LC_CTYPE=C sed 's/-/--/g; s/ /  /g;s/--  /--- /g'"
