@@ -1,19 +1,20 @@
 #!/bin/bash
+SED=$(test $(uname -o) = 'Darwin' && echo gsed || echo sed)
 unset http_proxy ftp_proxy socks_proxy https_proxy 
 if [ -z $(git config --global --name-only -l |grep remote.origin.proxy |xargs) ] 
 then 
     git config --global --add remote.origin.proxy ""
 fi
-gsed -i 's/proxy *= *[0-9.:]*/proxy =/' ~/.gitconfig
+$SED -i 's/proxy *= *[0-9.:]*/proxy =/' ~/.gitconfig
 
 if [ -z $(git config --global --name-only -l |grep user.name |xargs) ] 
 then 
     git config --global --add user.name ""
 fi
-gsed -i 's/name.*/name = xxxx/' ~/.gitconfig
+$SED -i 's/name.*/name = xxxx/' ~/.gitconfig
 
 if [ -z $(git config --global --name-only -l |grep user.email |xargs) ] 
 then 
     git config --global --add user.email ""
 fi
-gsed -i 's/email.*/email = xxxx@xxx/' ~/.gitconfig
+$SED -i 's/email.*/email = xxxx@xxxx/' ~/.gitconfig
