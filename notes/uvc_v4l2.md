@@ -1,0 +1,6 @@
+[https://stackoverflow.com/questions/49523944/capturing-usb-type-c-video-through-software/49532435](https://stackoverflow.com/questions/49523944/capturing-usb-type-c-video-through-software/49532435)
+[https://en.wikipedia.org/wiki/USB_video_device_class](https://en.wikipedia.org/wiki/USB_video_device_class)
+[http://www.ideasonboard.org/uvc/#documentation](http://www.ideasonboard.org/uvc/#documentation)
+[https://wiki.archlinux.org/index.php/Webcam_setup#MPlayer](https://wiki.archlinux.org/index.php/Webcam_setup#MPlayer)
+[https://www.cnblogs.com/kevin-heyongyuan/articles/11070769.html](https://www.cnblogs.com/kevin-heyongyuan/articles/11070769.html)
+[https://unix.stackexchange.com/questions/116904/understanding-webcam-s-linux-device-drivers](https://unix.stackexchange.com/questions/116904/understanding-webcam-s-linux-device-drivers)
