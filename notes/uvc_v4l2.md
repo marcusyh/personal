@@ -4,3 +4,4 @@
 [https://wiki.archlinux.org/index.php/Webcam_setup#MPlayer](https://wiki.archlinux.org/index.php/Webcam_setup#MPlayer)
 [https://www.cnblogs.com/kevin-heyongyuan/articles/11070769.html](https://www.cnblogs.com/kevin-heyongyuan/articles/11070769.html)
 [https://unix.stackexchange.com/questions/116904/understanding-webcam-s-linux-device-drivers](https://unix.stackexchange.com/questions/116904/understanding-webcam-s-linux-device-drivers)
+[https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iii-web-forms](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iii-web-forms)
